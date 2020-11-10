@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\T\\Desktop\\WMSApi\\WMS\\WMS\\WMS.csproj": {}
+    "C:\\Users\\T\\Desktop\\api\\WMS\\WMS\\WMS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\T\\Desktop\\WMSApi\\WMS\\WMS\\WMS.csproj": {
+    "C:\\Users\\T\\Desktop\\api\\WMS\\WMS\\WMS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\T\\Desktop\\WMSApi\\WMS\\WMS\\WMS.csproj",
+        "projectUniqueName": "C:\\Users\\T\\Desktop\\api\\WMS\\WMS\\WMS.csproj",
         "projectName": "WMS",
-        "projectPath": "C:\\Users\\T\\Desktop\\WMSApi\\WMS\\WMS\\WMS.csproj",
+        "projectPath": "C:\\Users\\T\\Desktop\\api\\WMS\\WMS\\WMS.csproj",
         "packagesPath": "C:\\Users\\T\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\T\\Desktop\\WMSApi\\WMS\\WMS\\obj\\",
+        "outputPath": "C:\\Users\\T\\Desktop\\api\\WMS\\WMS\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

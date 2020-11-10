@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lRTyxJLfZRoL+g8LryKC3MkLhfIyOqMCbBX2BerukGmUCsao++fAqaTjblTHobY+G7+fJcUjaKY7yiYS6Cf+YQ==",
+  "dgSpecHash": "L+ZxDanV5ji/W1H5Gv+dega6eG8ULZ28Efc/z+t2+KZFwCg1shSsPeWy2mRvX7v1MMQd7HzU1Fd4WY2Ct+MXPw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\T\\Desktop\\WMSApi\\WMS\\WMS\\WMS.csproj",
+  "projectFilePath": "C:\\Users\\T\\Desktop\\api\\WMS\\WMS\\WMS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\T\\.nuget\\packages\\automapper\\10.1.0\\automapper.10.1.0.nupkg.sha512",
     "C:\\Users\\T\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
