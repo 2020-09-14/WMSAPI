@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WMS.List;
 using WMS.Models;
 
 namespace WMS.Database
@@ -34,6 +35,13 @@ namespace WMS.Database
         public DbSet<EX_Warehouse> EX_Warehouse { get; set; }
 
         public DbSet<EX_Zhy> EX_Zhy { get; set; }
-      
+        public DbSet<Goods> Goods { get; set; }
+        public DbSet<Purchase> Purchases { get; set; }
+        public DbSet<Purchase_list> Purchase_Lists { get; set; }
+        public DbSet<AOGregister>  AOGregisters { get; set; }
+        public DbSet<AOGQualityTest>  AOGQualityTests { get; set; }
+        public DbSet<Godown>  Godowns { get; set; }
+
+
     }
 }

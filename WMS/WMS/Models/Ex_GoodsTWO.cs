@@ -20,6 +20,7 @@ namespace WMS.Models
         [Required]
         public string Specification { get; set; }
 
+
         public int OneIdd { get; set; }
 
         [MaxLength(200)]

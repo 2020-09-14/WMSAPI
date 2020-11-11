@@ -3,72 +3,23 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WMS.Database;
 
 namespace WMS.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201111015618_uptforkeyreturn")]
+    partial class uptforkeyreturn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("WMS.Models.AOGQualityTest", b =>
-                {
-                    b.Property<int>("AOGTestId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("AOGRegister")
-                        .HasColumnType("int");
-
-                    b.Property<string>("AOGTestName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("AOGTestNonum")
-                        .HasColumnType("int");
-
-                    b.Property<int>("AOGTestOknum")
-                        .HasColumnType("int");
-
-                    b.HasKey("AOGTestId");
-
-                    b.ToTable("AOGQualityTests");
-                });
-
-            modelBuilder.Entity("WMS.Models.AOGregister", b =>
-                {
-                    b.Property<int>("AOGId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("AOGNum")
-                        .HasColumnType("int");
-
-                    b.Property<int>("AOGPurchase")
-                        .HasColumnType("int");
-
-                    b.Property<string>("AOGRemark")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("AOGState")
-                        .HasColumnType("int");
-
-                    b.Property<int>("AOGWarehouse")
-                        .HasColumnType("int");
-
-                    b.HasKey("AOGId");
-
-                    b.ToTable("AOGregisters");
-                });
 
             modelBuilder.Entity("WMS.Models.DailyStatement", b =>
                 {
@@ -308,21 +259,6 @@ namespace WMS.Migrations
                     b.HasKey("GoodsThId");
 
                     b.ToTable("Ex_GoodsThr");
-                });
-
-            modelBuilder.Entity("WMS.Models.Godown", b =>
-                {
-                    b.Property<int>("GodownId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("GodownRegisterId")
-                        .HasColumnType("int");
-
-                    b.HasKey("GodownId");
-
-                    b.ToTable("Godowns");
                 });
 
             modelBuilder.Entity("WMS.Models.Goods", b =>

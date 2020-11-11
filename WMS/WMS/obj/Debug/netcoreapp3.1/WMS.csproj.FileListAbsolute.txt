@@ -109,3 +109,4 @@ C:\Users\T\Desktop\api\WMS\WMS\obj\Debug\netcoreapp3.1\staticwebassets\WMS.Stati
 C:\Users\T\Desktop\api\WMS\WMS\obj\Debug\netcoreapp3.1\WMS.dll
 C:\Users\T\Desktop\api\WMS\WMS\obj\Debug\netcoreapp3.1\WMS.pdb
 C:\Users\T\Desktop\api\WMS\WMS\obj\Debug\netcoreapp3.1\WMS.genruntimeconfig.cache
+C:\Users\T\Desktop\api\WMS\WMS\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
