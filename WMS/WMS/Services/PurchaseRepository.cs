@@ -19,30 +19,111 @@ namespace WMS.Services
         {
             _appDbContext = appDbContext;
         }
+
+        public void AddPurchase(Purchase purchase)
+        {
+            if (purchase == null)
+            {
+                throw new ArgumentException(nameof(purchase));
+            }
+            _appDbContext.Purchases.Add(purchase);
+            _appDbContext.SaveChanges();
+        }
+
+        public IEnumerable<EX_supplier> GetEnumerablesupplier()
+        {
+            return  _appDbContext.EX_supplier;
+        }
+
+        public IEnumerable<Ex_GoodsTWO> GetEx_GoodsTWO()
+        {
+            return _appDbContext.Ex_GoodsTWO;
+        }
+
         public IEnumerable<Purchase_list> GetPurchases()
         {
-            //IQueryable<Purchase> iq = _appDbContext.Purchases.Include("EX_supplier");
-            //IQueryable<Purchase> result = _appDbContext.Purchases.Include(t => t.PurchaseSupplierId);
+           
 
-            //var re = (from o in _appDbContext.Purchases
-            //          join d in _appDbContext.EX_supplier
-            //          on o.PurchaseSupplierId equals d.SupplierId
-            //          join p in _appDbContext.Ex_GoodsTWO
-            //          on o.PurchaseGoodsId equals p.Ex_GoodsTWOId
-            //          select new
-            //          {
-            //              d.SupplierName,
-            //          });
-            //var aa = _appDbContext.Purchase_Lists.FromSqlRaw("select * from Purchases join EX_supplier on PurchaseSupplierId=SupplierId join Ex_GoodsTWO on PurchaseGoodsId=Ex_GoodsTWO.OneIdd");
             var aa = from b in _appDbContext.Set<Purchase>()
                         join p in _appDbContext.Set<EX_supplier>()
                             on b.PurchaseSupplierId equals p.SupplierId
-                        select new { b.PurchaseGoodsId,p.SupplierId };
+                            join c in _appDbContext.Set<Ex_GoodsTWO>()
+                            on b.PurchaseGoodsId equals c.OneIdd
+                        select new { 
+                            b.PurchaseGoodsId   ,
+                            b.PurchaseId        ,
+                            b.PurchaseNum       ,
+                            b.PurchaseSupplierId,
+                            b.PurchaseTime      ,  
+                            b.PurchaseName      ,
+                            b.PurchaseState,
+                            p.SupplierName, 
+                            p.Serial ,
+                            p.SupplierId ,
+                            c.Ex_GoodsTWOId,
+                            c.GWname    ,  
+                            c.Specification,
+                            c.OneIdd       ,
+                            c.Coding       ,
+                            c.TWOsum       ,
+                            c.EX_ZhyId
+                          
+                        };
+            
+            //if (!string.IsNullOrWhiteSpace(ccc))
+            //{
+            //    ccc = ccc.Trim();
+            //    aa=aa.Where()
+            //}
             string str = JsonConvert.SerializeObject(aa);
             IEnumerable<Purchase_list> bb = JsonConvert.DeserializeObject<IEnumerable<Purchase_list>>(str);
             return bb;
             //return await _appDbContext.Purchases.Include(s => s.PurchaseSupplierId).ToListAsync();
 
+        }
+
+        public IEnumerable<Purchase_list> GetPurchasesId()
+        {
+            var aa = from b in _appDbContext.Set<Purchase>()
+                     join p in _appDbContext.Set<EX_supplier>()
+                         on b.PurchaseSupplierId equals p.SupplierId
+                     join c in _appDbContext.Set<Ex_GoodsTWO>()
+                     on b.PurchaseGoodsId equals c.OneIdd
+                     select new
+                     {
+                         b.PurchaseGoodsId,
+                         b.PurchaseId,
+                         b.PurchaseNum,
+                         b.PurchaseSupplierId,
+                         b.PurchaseTime,
+                         b.PurchaseName,
+                         b.PurchaseState,
+                         p.SupplierName,
+                         p.Serial,
+                         p.SupplierId,
+                         c.Ex_GoodsTWOId,
+                         c.GWname,
+                         c.Specification,
+                         c.OneIdd,
+                         c.Coding,
+                         c.TWOsum,
+                         c.EX_ZhyId
+
+                     };
+
+            //if (!string.IsNullOrWhiteSpace(ccc))
+            //{
+            //    ccc = ccc.Trim();
+            //    aa=aa.Where()
+            //}
+            string str = JsonConvert.SerializeObject(aa);
+            IEnumerable<Purchase_list> bb = JsonConvert.DeserializeObject<IEnumerable<Purchase_list>>(str);
+            return bb;
+        }
+
+        public bool Save()
+        {
+            return  _appDbContext.SaveChanges() >= 0;
         }
     }
 }
