@@ -7,11 +7,26 @@ namespace WMS.Dtos
 {
     public class Ex_GoodsTWODto
     {
-     
+
+        //二级的商品
+
+  
         public int Ex_GoodsTWOId { get; set; }
+
+   
         public string GWname { get; set; }
+
+      
         public string Specification { get; set; }
+
+
         public int OneIdd { get; set; }
+
+      
+
+     
+       
+
         public string Coding { get; set; }
 
         public int TWOsum { get; set; }

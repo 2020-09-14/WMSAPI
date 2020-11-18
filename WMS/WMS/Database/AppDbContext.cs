@@ -31,7 +31,8 @@ namespace WMS.Database
         public DbSet<EX_ReservoirArea> EX_ReservoirArea { get; set; }
 
         public DbSet<EX_supplier> EX_supplier { get; set; }
-
+        public DbSet<EX_Shipment> EX_Shipment { get; set; }
+      
         public DbSet<EX_Warehouse> EX_Warehouse { get; set; }
 
         public DbSet<EX_Zhy> EX_Zhy { get; set; }
@@ -41,7 +42,10 @@ namespace WMS.Database
         public DbSet<AOGregister>  AOGregisters { get; set; }
         public DbSet<AOGQualityTest>  AOGQualityTests { get; set; }
         public DbSet<Godown>  Godowns { get; set; }
-
+        public DbSet<EX_Shipment_list> EX_Shipment_Lists { get; set; }
+        public DbSet<EX_ProductCategory> EX_ProductCategories { get; set; }
+        public DbSet<EX_Renwu> EX_Renwus { get; set; }
+        public DbSet<EX_GoodsOutbound> EX_GoodsOutbounds { get; set; }
 
     }
 }

@@ -13,6 +13,7 @@ namespace WMS.Profiles
         public StudentProfile()
         {
             CreateMap<Students, StudentDto>();
+            
         }
     }
 }

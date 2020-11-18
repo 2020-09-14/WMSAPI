@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WMS.Database;
 
 namespace WMS.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201116114652_addexrenwu")]
+    partial class addexrenwu
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -84,37 +86,6 @@ namespace WMS.Migrations
                     b.HasKey("DailyStatementId");
 
                     b.ToTable("DailyStatement");
-                });
-
-            modelBuilder.Entity("WMS.Models.EX_GoodsOutbound", b =>
-                {
-                    b.Property<int>("GoodsOId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("GoCoding")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(200)")
-                        .HasMaxLength(200);
-
-                    b.Property<string>("GoName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("GoSpecification")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(200)")
-                        .HasMaxLength(200);
-
-                    b.Property<int>("Gosum")
-                        .HasColumnType("int");
-
-                    b.Property<int>("RenIdd")
-                        .HasColumnType("int");
-
-                    b.HasKey("GoodsOId");
-
-                    b.ToTable("EX_GoodsOutbounds");
                 });
 
             modelBuilder.Entity("WMS.Models.EX_ProductCategory", b =>

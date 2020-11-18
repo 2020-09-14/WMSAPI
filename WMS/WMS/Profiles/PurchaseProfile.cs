@@ -15,9 +15,17 @@ namespace WMS.Profiles
         {
             CreateMap<Purchase, PurchaseShowDto>();
             CreateMap<Purchase_list, PurchaseShowDto>();
+
+            CreateMap<EX_Shipment_list, EX_ShipmentDto>();
+            CreateMap<EX_ProductCategory, EX_ProductCategoryDto>();
+            CreateMap<EX_Renwu, EX_RenwusDto>();
+            CreateMap<Ex_GoodsTWO, Ex_GoodsTWODto>();
+            
+
             CreateMap<EX_supplier, EX_supplierShowDto>();
             CreateMap<Ex_GoodsTWO, Ex_GoodsTWODto>();
             CreateMap<CreatePurchaseDto, Purchase>();
+
         }
     }
 }

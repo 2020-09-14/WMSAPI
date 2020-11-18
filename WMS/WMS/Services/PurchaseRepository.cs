@@ -20,6 +20,7 @@ namespace WMS.Services
             _appDbContext = appDbContext;
         }
 
+
         public void AddPurchase(Purchase purchase)
         {
             if (purchase == null)
@@ -39,6 +40,7 @@ namespace WMS.Services
         {
             return _appDbContext.Ex_GoodsTWO;
         }
+
 
         public IEnumerable<Purchase_list> GetPurchases()
         {

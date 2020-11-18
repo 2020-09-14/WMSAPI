@@ -37,6 +37,7 @@ namespace WMS
 
             services.AddScoped<IWMSRepository,StudentsRepository>();
             services.AddScoped<IWMSPurchaseRepository, PurchaseRepository>();
+            services.AddScoped<EX_Wangchao, EX_Wangchaolist>();
             ;            services.AddDbContext<AppDbContext>(option=> {
                 option.UseSqlServer(_configuration["DbContext:ConnectionString"]);
             });
