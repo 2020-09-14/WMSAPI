@@ -13,10 +13,13 @@ namespace WMS.Services
         IEnumerable<Purchase_list> GetPurchases();
 
 
+
         IEnumerable<Purchase_list> GetPurchasesId();
+
         IEnumerable<EX_supplier> GetEnumerablesupplier();
         IEnumerable<Ex_GoodsTWO> GetEx_GoodsTWO();
         void AddPurchase(Purchase purchase);
+        void UptPurchase(int ids);
         bool Save();
     }
 }

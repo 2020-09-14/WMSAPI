@@ -139,8 +139,17 @@ namespace WMS.Controller
             createPurchaseDto.PurchaseState = 0;
             var purchaseModel = _mapper.Map<Purchase>(createPurchaseDto);
             _wMS.AddPurchase(purchaseModel);
-            _wMS.Save();
-            return Ok(1);
+          
+            var a = _wMS.Save();
+            return Ok(a);
+        }
+        [Route("/api/CaiState")]
+        [HttpGet]
+        public IActionResult UptPurchase(int ids)
+        {
+            _wMS.UptPurchase(ids);
+            var a=_wMS.Save();
+            return Ok(a);
         }
 
     }
