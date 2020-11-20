@@ -12,7 +12,7 @@ namespace WMS.Services
     {
         IEnumerable<Purchase_list> GetPurchases();
 
-
+        
 
         IEnumerable<Purchase_list> GetPurchasesId();
 

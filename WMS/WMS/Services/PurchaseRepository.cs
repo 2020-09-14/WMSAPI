@@ -35,7 +35,7 @@ namespace WMS.Services
         {
             return  _appDbContext.EX_supplier;
         }
-
+        
         public IEnumerable<Ex_GoodsTWO> GetEx_GoodsTWO()
         {
             return _appDbContext.Ex_GoodsTWO;

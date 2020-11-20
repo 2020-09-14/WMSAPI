@@ -43,6 +43,16 @@ namespace WMS.Database
         public DbSet<AOGQualityTest>  AOGQualityTests { get; set; }
         public DbSet<Godown>  Godowns { get; set; }
 
+
+        public DbSet<Allot> Allots { get; set; }
+        public DbSet<BStorage> BStorages { get; set; }
+        public DbSet<Details> Detailss { get; set; }
+        public DbSet<EDispose> EDisposes { get; set; }
+        public DbSet<Itemdetails> Itemdetailss { get; set; }
+        public DbSet<Notarize> Notarizes { get; set; }
+        public DbSet<Print> Prints { get; set; }
+        public DbSet<SendTheShipping> SendTheShippings { get; set; }
+
         public DbSet<GodownTodo>  GodownTodos { get; set; }
 
         public DbSet<EX_Shipment_list> EX_Shipment_Lists { get; set; }

@@ -36,6 +36,7 @@ namespace WMS
             services.AddControllersWithViews();
 
             services.AddScoped<IWMSRepository,StudentsRepository>();
+            services.AddScoped<IWMSAllot, AllotRepository>();
             services.AddScoped<IWMSPurchaseRepository, PurchaseRepository>();
             services.AddScoped<EX_Wangchao, EX_Wangchaolist>();
             ;            services.AddDbContext<AppDbContext>(option=> {
