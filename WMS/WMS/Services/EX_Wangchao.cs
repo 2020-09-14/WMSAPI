@@ -18,5 +18,10 @@ namespace WMS.Services
         IEnumerable<Ex_GoodsTWO> Ex_GoodsTWOs();
         int Ex_AddChukuwupin(List<EX_GoodsOutbound> list,string ids);
         bool Save();
+        IEnumerable<EX_GoodsOutbound> EX_GoodsOutboundsShow();//显示相对于的商品\
+        //所有日报表
+        IEnumerable<DailyStatement> DailyStatements();
+        //查询
+        IEnumerable<EX_RenwusList> EX_Renwus(string time);
     }
 }

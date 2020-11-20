@@ -20,16 +20,23 @@ namespace WMS.Services
         //添加出库任务
         public int Ex_AddChukuwupin(List<EX_GoodsOutbound> list, string ids)
         {
-            int i=0;
-            foreach (EX_GoodsOutbound item in list)
+            int jilu=0;
+            for (int i = 0; i < list.Count-1; i++)
             {
-                item.GoodsOId = 0;
-                item.RenIdd = Convert.ToInt32(ids);
-                _appDbContext.EX_GoodsOutbounds.Add(item);
-               i +=  _appDbContext.SaveChanges();
+                //list[i].GoodsOId = 0;
+                list[i].RenIdd = Convert.ToInt32(ids);
+                _appDbContext.EX_GoodsOutbounds.Add(list[i]);
+                jilu += _appDbContext.SaveChanges();
+
             }
+            //foreach (EX_GoodsOutbound item in list)
+            //{
+            //    
+            //    item.RenIdd = Convert.ToInt32(ids);
+               
+            //}
             
-            return i;
+            return jilu;
         }
         public bool Save()
         {
@@ -105,7 +112,43 @@ namespace WMS.Services
             IEnumerable<EX_Shipment_list> bb = JsonConvert.DeserializeObject<IEnumerable<EX_Shipment_list>>(str);
             return bb;
         }
-
-     
+        //显示出库任务所对应的商品明细
+        public IEnumerable<EX_GoodsOutbound> EX_GoodsOutboundsShow()
+        {
+            return _appDbContext.EX_GoodsOutbounds.ToList();
+        }
+        //显示日报表日期
+        public IEnumerable<DailyStatement> DailyStatements()
+        {
+            return _appDbContext.DailyStatement.ToList();
+        }
+        //显示要打印的
+        public IEnumerable<EX_RenwusList> EX_Renwus(string time)
+        {
+            var aa = from a in _appDbContext.Set<EX_Renwu>()
+                     join b in _appDbContext.Set<EX_GoodsOutbound>()
+                     on a.ShipmentId equals b.GoodsOId
+                     select new
+                     {
+                         a.ShipmentId,
+                         a.ShCoding,
+                         a.Goodsidd,
+                         a.Shsum,
+                         a.State,
+                         a.article,
+                         a.Cause,
+                         a.Createtime,
+                         b.GoCoding,
+                         b.GoName,
+                         b.GoodsOId,
+                         b.GoSpecification,
+                         b.Gosum,
+                         b.RenIdd
+                         
+                     };
+            string str = JsonConvert.SerializeObject(aa);
+            IEnumerable<EX_RenwusList> bb = JsonConvert.DeserializeObject<IEnumerable<EX_RenwusList>>(str);
+            return bb;
+        }
     }
 }

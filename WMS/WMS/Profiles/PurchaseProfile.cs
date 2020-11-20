@@ -25,6 +25,8 @@ namespace WMS.Profiles
             CreateMap<EX_supplier, EX_supplierShowDto>();
             CreateMap<Ex_GoodsTWO, Ex_GoodsTWODto>();
             CreateMap<CreatePurchaseDto, Purchase>();
+            CreateMap<DailyStatementDto, DailyStatement>();
+            CreateMap<EX_RenwusList, EX_rbao>();
 
         }
     }

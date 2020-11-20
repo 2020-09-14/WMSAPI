@@ -224,7 +224,6 @@ C:\Users\86176\Desktop\WAS_api2\WMSAPI2\WMS\WMS\obj\Debug\netcoreapp3.1\staticwe
 C:\Users\86176\Desktop\WAS_api2\WMSAPI2\WMS\WMS\obj\Debug\netcoreapp3.1\WMS.dll
 C:\Users\86176\Desktop\WAS_api2\WMSAPI2\WMS\WMS\obj\Debug\netcoreapp3.1\WMS.pdb
 C:\Users\86176\Desktop\WAS_api2\WMSAPI2\WMS\WMS\obj\Debug\netcoreapp3.1\WMS.genruntimeconfig.cache
-C:\Users\86176\Desktop\WAS_api2\WMSAPI2\WMS\WMS\obj\Debug\netcoreapp3.1\WMS.csprojAssemblyReference.cache
 C:\Users\T\Desktop\api\WMS\WMS\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\T\Desktop\api\WMS\WMS\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\T\Desktop\api\WMS\WMS\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
