@@ -184,17 +184,17 @@ namespace WMS.Controller
             return Ok(aa);
         }
         //显示出库任务所对应的商品明细
-        //[Route("/api/Ex_GoodsShow")]
-        //public IEnumerable<EX_GoodsOutbound> EX_GoodsOutboundsShow(string ids)
-        //{
-        //    var aa = _wMS.EX_GoodsOutboundsShow();
-        //    if (!string.IsNullOrEmpty(ids))
-        //    {
-        //        aa = aa.Where(p => p.RenIdd == Convert.ToInt32(ids));
-        //    }
-        //    return aa;
-        //}
-        //日报表显示
+        [Route("/api/Ex_GoodsShow")]
+        public IEnumerable<EX_GoodsOutbound> EX_GoodsOutboundsShow(string ids)
+        {
+            var aa = _wMS.EX_GoodsOutboundsShow();
+            if (!string.IsNullOrEmpty(ids))
+            {
+                aa = aa.Where(p => p.RenIdd == Convert.ToInt32(ids));
+            }
+            return aa;
+        }
+       // 日报表显示
 
         [Route("/api/Daily")]
         [HttpGet]
