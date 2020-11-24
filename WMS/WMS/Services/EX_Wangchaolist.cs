@@ -127,7 +127,8 @@ namespace WMS.Services
         {
             var aa = from a in _appDbContext.Set<EX_Renwu>()
                      join b in _appDbContext.Set<EX_GoodsOutbound>()
-                     on a.ShipmentId equals b.GoodsOId
+                     on a.ShipmentId equals b.RenIdd
+                     where a.Createtime.ToString().Contains(time)
                      select new
                      {
                          a.ShipmentId,

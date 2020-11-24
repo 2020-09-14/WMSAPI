@@ -195,18 +195,24 @@ namespace WMS.Controller
         //    return aa;
         //}
         //日报表显示
-        //[Route("/api/Daily")]
-        //[HttpGet]
-        //public IActionResult DailyStatements()
-        //{
-        //    return Ok(_wMS.DailyStatements());
-        //}
-        ////日报表数据
-        //[Route("/api/Daily2")]
-        //[HttpGet]
-        //public IActionResult EX_Renwus(string time)
-        //{
-        //    return Ok(_wMS.EX_Renwus(time));
-        //}
+
+        [Route("/api/Daily")]
+        [HttpGet]
+        public IActionResult DailyStatements()
+        {
+            return Ok(_wMS.DailyStatements());
+        }
+        //日报表数据
+        [Route("/api/Daily2")]
+        [HttpGet]
+        public IActionResult EX_Renwus(string time)
+         
+        {
+            time = time.Replace("/", "-");
+            return Ok(_wMS.EX_Renwus(time));
+        }
+
+       
+
     }
 }
