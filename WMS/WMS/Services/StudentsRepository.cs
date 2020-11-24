@@ -19,5 +19,27 @@ namespace WMS.Services
         {
             return await _appDbContext.Students.ToListAsync();
         }
+        
+        /// <summary>
+        /// 保存
+        /// </summary>
+        /// <returns></returns>
+        public async Task<bool> SaveAsync()
+        {
+            return (await _appDbContext.SaveChangesAsync() >= 0);
+        }
+        /// <summary>
+        /// 添加
+        /// </summary>
+        /// <param name="w"></param>
+        public void AddWareHouse(EX_Warehouse w)
+        {
+            if (w == null)
+            {
+                throw new ArgumentException(nameof(w));
+            }
+            _appDbContext.EX_Warehouse.Add(w);
+            _appDbContext.SaveChanges();
+        }
     }
 }

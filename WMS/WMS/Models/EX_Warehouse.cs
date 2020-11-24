@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace WMS.Models
 {
+
     public class EX_Warehouse
     {
         //主仓库
@@ -13,9 +14,11 @@ namespace WMS.Models
         public int WarehouseId { get; set; }
         [MaxLength(200)]
         [Required]
-        public string Wname { get; set; }
+        public string Wname { get; set; }//仓库名
         [MaxLength(200)]
         [Required]
-        public string Address { get; set; }
+        public string Address { get; set; }//仓库地址
+
+
     }
 }

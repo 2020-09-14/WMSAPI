@@ -6,6 +6,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WMS.Dtos;
+using WMS.Models;
 using WMS.Services;
 
 namespace WMS.Controller

@@ -13,8 +13,6 @@ namespace WMS.Models
         public int ZhyId { get; set; }
         [MaxLength(200)]
         public string Zname { get; set; }
-        [MaxLength(200)]
-        public string TemperatureZone { get; set; }
         public int Ridd { get; set; }
         public int InventorySettings { get; set; }
     }

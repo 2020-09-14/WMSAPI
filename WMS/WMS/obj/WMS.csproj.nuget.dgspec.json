@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\T\\Desktop\\api\\WMS\\WMS\\WMS.csproj": {}
+    "C:\\Users\\lenovo\\Desktop\\WMS项目\\API\\WMS\\WMS\\WMS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\T\\Desktop\\api\\WMS\\WMS\\WMS.csproj": {
+    "C:\\Users\\lenovo\\Desktop\\WMS项目\\API\\WMS\\WMS\\WMS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\T\\Desktop\\api\\WMS\\WMS\\WMS.csproj",
+        "projectUniqueName": "C:\\Users\\lenovo\\Desktop\\WMS项目\\API\\WMS\\WMS\\WMS.csproj",
         "projectName": "WMS",
-        "projectPath": "C:\\Users\\T\\Desktop\\api\\WMS\\WMS\\WMS.csproj",
-        "packagesPath": "C:\\Users\\T\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\T\\Desktop\\api\\WMS\\WMS\\obj\\",
+        "projectPath": "C:\\Users\\lenovo\\Desktop\\WMS项目\\API\\WMS\\WMS\\WMS.csproj",
+        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lenovo\\Desktop\\WMS项目\\API\\WMS\\WMS\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\T\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

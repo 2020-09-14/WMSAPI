@@ -38,6 +38,7 @@ namespace WMS
             services.AddScoped<IWMSRepository,StudentsRepository>();
             services.AddScoped<IWMSAllot, AllotRepository>();
             services.AddScoped<IWMSPurchaseRepository, PurchaseRepository>();
+            services.AddScoped<IWMSInventoryRepository, InventoryRepssitory>();
             services.AddScoped<EX_Wangchao, EX_Wangchaolist>();
             ;            services.AddDbContext<AppDbContext>(option=> {
                 option.UseSqlServer(_configuration["DbContext:ConnectionString"]);
@@ -45,6 +46,7 @@ namespace WMS
 
          
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

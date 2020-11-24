@@ -248,6 +248,9 @@ namespace WMS.Migrations
 
                             b.HasKey("DId");
 
+                            b.Property<string>("Zname")
+                                .HasColumnType("nvarchar(200)")
+                                .HasMaxLength(200);
                             b.ToTable("Detailss");
                         });
 
@@ -447,507 +450,535 @@ namespace WMS.Migrations
                                 .HasColumnType("nvarchar(200)")
                                 .HasMaxLength(200);
 
-                            b.Property<int>("Shsum")
-                                .HasColumnType("int");
-
-                            b.Property<int>("SupplierIdd")
-                                .HasColumnType("int");
-
-                            b.Property<string>("article")
-                                .HasColumnType("nvarchar(200)")
-                                .HasMaxLength(200);
+                            modelBuilder.Entity("WMS.Models.ProWareHouse", b =>
+                                {
+                                    b.Property<int>("PId")
+                                        .ValueGeneratedOnAdd()
+                                        .HasColumnType("int")
+                                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                                    b.Property<int>("Ex_GoodsTWOId")
+                                        .HasColumnType("int");
+
+                                    b.Property<int>("ProductCategoryId")
+                                        .HasColumnType("int");
 
-                            b.HasKey("ShipmentId");
+                                    b.Property<int>("WarehouseId")
+                                        .HasColumnType("int");
+
+                                    b.HasKey("PId");
+
+                                    b.ToTable("ProWareHouse");
+                                });
+
+                            modelBuilder.Entity("WMS.Models.Purchase", b =>
+                                {
+                                    b.Property<int>("PurchaseId")
+                                        .ValueGeneratedOnAdd()
+                                        .HasColumnType("int")
+                                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                    b.Property<int>("Shsum")
+                        .HasColumnType("int");
+
+                                    b.Property<int>("SupplierIdd")
+                        .HasColumnType("int");
+
+                                    b.Property<string>("article")
+                        .HasColumnType("nvarchar(200)")
+                        .HasMaxLength(200);
 
-                            b.ToTable("EX_Shipment");
-                        });
+                                    b.HasKey("ShipmentId");
+
+                                    b.ToTable("EX_Shipment");
+                                });
+
+                            modelBuilder.Entity("WMS.Models.EX_Warehouse", b =>
+                                {
+                                    b.Property<int>("WarehouseId")
+                                        .ValueGeneratedOnAdd()
+                                        .HasColumnType("int")
+                                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    modelBuilder.Entity("WMS.Models.EX_Warehouse", b =>
-                        {
-                            b.Property<int>("WarehouseId")
-                                .ValueGeneratedOnAdd()
-                                .HasColumnType("int")
-                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                    b.Property<string>("Address")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(200)")
+                                        .HasMaxLength(200);
 
-                            b.Property<string>("Address")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(200)")
-                                .HasMaxLength(200);
+                                    b.Property<string>("Wname")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(200)")
+                                        .HasMaxLength(200);
+
+                                    b.HasKey("WarehouseId");
 
-                            b.Property<string>("Wname")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(200)")
-                                .HasMaxLength(200);
+                                    b.ToTable("EX_Warehouse");
+                                });
+
+                            modelBuilder.Entity("WMS.Models.EX_Zhy", b =>
+                                {
+                                    b.Property<int>("ZhyId")
+                                        .ValueGeneratedOnAdd()
+                                        .HasColumnType("int")
+                                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                                    b.Property<int>("InventorySettings")
+                                        .HasColumnType("int");
+
+                                    b.Property<int>("Ridd")
+                                        .HasColumnType("int");
 
-                            b.HasKey("WarehouseId");
+                                    b.Property<string>("TemperatureZone")
+                                        .HasColumnType("nvarchar(200)")
+                                        .HasMaxLength(200);
+
+                                    b.Property<string>("Zname")
+                                        .HasColumnType("nvarchar(200)")
+                                        .HasMaxLength(200);
 
-                            b.ToTable("EX_Warehouse");
-                        });
+                                    b.HasKey("ZhyId");
 
-                    modelBuilder.Entity("WMS.Models.EX_Zhy", b =>
-                        {
-                            b.Property<int>("ZhyId")
-                                .ValueGeneratedOnAdd()
-                                .HasColumnType("int")
-                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                    b.ToTable("EX_Zhy");
+                                });
 
-                            b.Property<int>("InventorySettings")
-                                .HasColumnType("int");
+                            modelBuilder.Entity("WMS.Models.EX_supplier", b =>
+                                {
+                                    b.Property<int>("SupplierId")
+                                        .ValueGeneratedOnAdd()
+                                        .HasColumnType("int")
+                                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                            b.Property<int>("Ridd")
-                                .HasColumnType("int");
+                                    b.Property<string>("Serial")
+                                        .HasColumnType("nvarchar(200)")
+                                        .HasMaxLength(200);
 
-                            b.Property<string>("TemperatureZone")
-                                .HasColumnType("nvarchar(200)")
-                                .HasMaxLength(200);
-
-                            b.Property<string>("Zname")
-                                .HasColumnType("nvarchar(200)")
-                                .HasMaxLength(200);
+                                    b.Property<string>("SupplierName")
+                                        .HasColumnType("nvarchar(200)")
+                                        .HasMaxLength(200);
 
-                            b.HasKey("ZhyId");
+                                    b.HasKey("SupplierId");
 
-                            b.ToTable("EX_Zhy");
-                        });
+                                    b.ToTable("EX_supplier");
+                                });
 
-                    modelBuilder.Entity("WMS.Models.EX_supplier", b =>
-                        {
-                            b.Property<int>("SupplierId")
-                                .ValueGeneratedOnAdd()
-                                .HasColumnType("int")
-                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                            modelBuilder.Entity("WMS.Models.Ex_GoodsOne", b =>
+                                {
+                                    b.Property<int>("Ex_GoodsOneId")
+                                        .ValueGeneratedOnAdd()
+                                        .HasColumnType("int")
+                                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                            b.Property<string>("Serial")
-                                .HasColumnType("nvarchar(200)")
-                                .HasMaxLength(200);
+                                    b.Property<string>("Coding")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(200)")
+                                        .HasMaxLength(200);
 
-                            b.Property<string>("SupplierName")
-                                .HasColumnType("nvarchar(200)")
-                                .HasMaxLength(200);
+                                    b.Property<DateTime>("Createtime")
+                                        .HasColumnType("datetime2");
 
-                            b.HasKey("SupplierId");
+                                    b.Property<string>("GOname")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(200)")
+                                        .HasMaxLength(200);
 
-                            b.ToTable("EX_supplier");
-                        });
+                                    b.Property<int>("ONEsum")
+                                        .HasColumnType("int");
 
-                    modelBuilder.Entity("WMS.Models.Ex_GoodsOne", b =>
-                        {
-                            b.Property<int>("Ex_GoodsOneId")
-                                .ValueGeneratedOnAdd()
-                                .HasColumnType("int")
-                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                    b.Property<int>("Pidd")
+                                        .HasColumnType("int");
 
-                            b.Property<string>("Coding")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(200)")
-                                .HasMaxLength(200);
+                                    b.Property<string>("PurchasePerson")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(200)")
+                                        .HasMaxLength(200);
 
-                            b.Property<DateTime>("Createtime")
-                                .HasColumnType("datetime2");
+                                    b.Property<int>("State")
+                                        .HasColumnType("int");
 
-                            b.Property<string>("GOname")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(200)")
-                                .HasMaxLength(200);
+                                    b.Property<int>("Supplier")
+                                        .HasColumnType("int")
+                                        .HasMaxLength(200);
 
-                            b.Property<int>("ONEsum")
-                                .HasColumnType("int");
+                                    b.HasKey("Ex_GoodsOneId");
 
-                            b.Property<int>("Pidd")
-                                .HasColumnType("int");
+                                    b.ToTable("Ex_GoodsOne");
+                                });
 
-                            b.Property<string>("PurchasePerson")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(200)")
-                                .HasMaxLength(200);
+                            modelBuilder.Entity("WMS.Models.Ex_GoodsTWO", b =>
+                                {
+                                    b.Property<int>("Ex_GoodsTWOId")
+                                        .ValueGeneratedOnAdd()
+                                        .HasColumnType("int")
+                                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                            b.Property<int>("State")
-                                .HasColumnType("int");
+                                    b.Property<string>("Coding")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(200)")
+                                        .HasMaxLength(200);
 
-                            b.Property<int>("Supplier")
-                                .HasColumnType("int")
-                                .HasMaxLength(200);
+                                    b.Property<int>("EX_ZhyId")
+                                        .HasColumnType("int");
 
-                            b.HasKey("Ex_GoodsOneId");
+                                    b.Property<string>("GWname")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(200)")
+                                        .HasMaxLength(200);
 
-                            b.ToTable("Ex_GoodsOne");
-                        });
+                                    b.Property<int>("OneIdd")
+                                        .HasColumnType("int");
 
-                    modelBuilder.Entity("WMS.Models.Ex_GoodsTWO", b =>
-                        {
-                            b.Property<int>("Ex_GoodsTWOId")
-                                .ValueGeneratedOnAdd()
-                                .HasColumnType("int")
-                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                    b.Property<string>("Specification")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(200)")
+                                        .HasMaxLength(200);
 
-                            b.Property<string>("Coding")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(200)")
-                                .HasMaxLength(200);
+                                    b.Property<int>("TWOsum")
+                                        .HasColumnType("int");
 
-                            b.Property<int>("EX_ZhyId")
-                                .HasColumnType("int");
+                                    b.HasKey("Ex_GoodsTWOId");
 
-                            b.Property<string>("GWname")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(200)")
-                                .HasMaxLength(200);
+                                    b.ToTable("Ex_GoodsTWO");
+                                });
 
-                            b.Property<int>("OneIdd")
-                                .HasColumnType("int");
+                            modelBuilder.Entity("WMS.Models.Ex_GoodsThr", b =>
+                                {
+                                    b.Property<int>("GoodsThId")
+                                        .ValueGeneratedOnAdd()
+                                        .HasColumnType("int")
+                                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                            b.Property<string>("Specification")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(200)")
-                                .HasMaxLength(200);
+                                    b.Property<string>("Coding")
+                                        .HasColumnType("nvarchar(200)")
+                                        .HasMaxLength(200);
 
-                            b.Property<int>("TWOsum")
-                                .HasColumnType("int");
+                                    b.Property<int>("GTname")
+                                        .HasColumnType("int")
+                                        .HasMaxLength(200);
 
-                            b.HasKey("Ex_GoodsTWOId");
+                                    b.Property<int>("Specification")
+                                        .HasColumnType("int")
+                                        .HasMaxLength(200);
 
-                            b.ToTable("Ex_GoodsTWO");
-                        });
+                                    b.Property<int>("State")
+                                        .HasColumnType("int");
 
-                    modelBuilder.Entity("WMS.Models.Ex_GoodsThr", b =>
-                        {
-                            b.Property<int>("GoodsThId")
-                                .ValueGeneratedOnAdd()
-                                .HasColumnType("int")
-                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                    b.Property<int>("TWOIdd")
+                                        .HasColumnType("int");
 
-                            b.Property<string>("Coding")
-                                .HasColumnType("nvarchar(200)")
-                                .HasMaxLength(200);
+                                    b.HasKey("GoodsThId");
 
-                            b.Property<int>("GTname")
-                                .HasColumnType("int")
-                                .HasMaxLength(200);
+                                    b.ToTable("Ex_GoodsThr");
+                                });
 
-                            b.Property<int>("Specification")
-                                .HasColumnType("int")
-                                .HasMaxLength(200);
+                            modelBuilder.Entity("WMS.Models.Godown", b =>
+                                {
+                                    b.Property<int>("GodownId")
+                                        .ValueGeneratedOnAdd()
+                                        .HasColumnType("int")
+                                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                            b.Property<int>("State")
-                                .HasColumnType("int");
+                                    b.Property<int>("GodownRegisterId")
+                                        .HasColumnType("int");
 
-                            b.Property<int>("TWOIdd")
-                                .HasColumnType("int");
+                                    b.HasKey("GodownId");
 
-                            b.HasKey("GoodsThId");
+                                    b.ToTable("Godowns");
+                                });
 
-                            b.ToTable("Ex_GoodsThr");
-                        });
+                            modelBuilder.Entity("WMS.Models.GodownTodo", b =>
+                                {
+                                    b.Property<int>("GodownTodoId")
+                                        .ValueGeneratedOnAdd()
+                                        .HasColumnType("int")
+                                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    modelBuilder.Entity("WMS.Models.Godown", b =>
-                        {
-                            b.Property<int>("GodownId")
-                                .ValueGeneratedOnAdd()
-                                .HasColumnType("int")
-                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                    b.Property<string>("GodownTodoNum")
+                                        .HasColumnType("nvarchar(max)");
 
-                            b.Property<int>("GodownRegisterId")
-                                .HasColumnType("int");
+                                    b.Property<int>("GodownTodoPurchaseId")
+                                        .HasColumnType("int");
 
-                            b.HasKey("GodownId");
+                                    b.Property<int>("GodownTodoState")
+                                        .HasColumnType("int");
 
-                            b.ToTable("Godowns");
-                        });
+                                    b.HasKey("GodownTodoId");
 
-                    modelBuilder.Entity("WMS.Models.GodownTodo", b =>
-                        {
-                            b.Property<int>("GodownTodoId")
-                                .ValueGeneratedOnAdd()
-                                .HasColumnType("int")
-                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                    b.ToTable("GodownTodos");
+                                });
 
-                            b.Property<string>("GodownTodoNum")
-                                .HasColumnType("nvarchar(max)");
+                            modelBuilder.Entity("WMS.Models.Goods", b =>
+                                {
+                                    b.Property<int>("GoodsId")
+                                        .ValueGeneratedOnAdd()
+                                        .HasColumnType("int")
+                                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                            b.Property<int>("GodownTodoPurchaseId")
-                                .HasColumnType("int");
+                                    b.Property<int>("Conding")
+                                        .HasColumnType("int")
+                                        .HasMaxLength(200);
 
-                            b.Property<int>("GodownTodoState")
-                                .HasColumnType("int");
+                                    b.Property<string>("Gname")
+                                        .HasColumnType("nvarchar(200)")
+                                        .HasMaxLength(200);
 
-                            b.HasKey("GodownTodoId");
+                                    b.Property<int>("InventorySettings")
+                                        .HasColumnType("int");
 
-                            b.ToTable("GodownTodos");
-                        });
+                                    b.Property<int>("level")
+                                        .HasColumnType("int");
 
-                    modelBuilder.Entity("WMS.Models.Goods", b =>
-                        {
-                            b.Property<int>("GoodsId")
-                                .ValueGeneratedOnAdd()
-                                .HasColumnType("int")
-                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                    b.HasKey("GoodsId");
 
-                            b.Property<int>("Conding")
-                                .HasColumnType("int")
-                                .HasMaxLength(200);
+                                    b.ToTable("Goods");
+                                });
 
-                            b.Property<string>("Gname")
-                                .HasColumnType("nvarchar(200)")
-                                .HasMaxLength(200);
+                            modelBuilder.Entity("WMS.Models.Itemdetails", b =>
+                                {
+                                    b.Property<int>("IId")
+                                        .ValueGeneratedOnAdd()
+                                        .HasColumnType("int")
+                                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                            b.Property<int>("InventorySettings")
-                                .HasColumnType("int");
+                                    b.Property<int>("IApply")
+                                        .HasColumnType("int");
 
-                            b.Property<int>("level")
-                                .HasColumnType("int");
+                                    b.Property<int>("IExamine")
+                                        .HasColumnType("int");
 
-                            b.HasKey("GoodsId");
+                                    b.Property<int>("IHaveoutbound")
+                                        .HasColumnType("int");
 
-                            b.ToTable("Goods");
-                        });
+                                    b.Property<int>("IInventory")
+                                        .HasColumnType("int");
 
-                    modelBuilder.Entity("WMS.Models.Itemdetails", b =>
-                        {
-                            b.Property<int>("IId")
-                                .ValueGeneratedOnAdd()
-                                .HasColumnType("int")
-                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                    b.Property<string>("IItemcode")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(max)");
 
-                            b.Property<int>("IApply")
-                                .HasColumnType("int");
+                                    b.Property<decimal>("IMoney")
+                                        .HasColumnType("decimal(18,2)");
 
-                            b.Property<int>("IExamine")
-                                .HasColumnType("int");
+                                    b.Property<string>("IName")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(max)");
 
-                            b.Property<int>("IHaveoutbound")
-                                .HasColumnType("int");
+                                    b.Property<string>("IPicture")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(max)");
 
-                            b.Property<int>("IInventory")
-                                .HasColumnType("int");
+                                    b.Property<decimal>("IPrice")
+                                        .HasColumnType("decimal(18,2)");
 
-                            b.Property<string>("IItemcode")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                    b.Property<int>("ISum")
+                                        .HasColumnType("int");
 
-                            b.Property<decimal>("IMoney")
-                                .HasColumnType("decimal(18,2)");
+                                    b.Property<string>("IUnits")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(max)");
 
-                            b.Property<string>("IName")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                    b.Property<int>("IWId")
+                                        .HasColumnType("int");
 
-                            b.Property<string>("IPicture")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                    b.HasKey("IId");
 
-                            b.Property<decimal>("IPrice")
-                                .HasColumnType("decimal(18,2)");
+                                    b.ToTable("Itemdetailss");
+                                });
 
-                            b.Property<int>("ISum")
-                                .HasColumnType("int");
+                            modelBuilder.Entity("WMS.Models.Notarize", b =>
+                                {
+                                    b.Property<int>("NId")
+                                        .ValueGeneratedOnAdd()
+                                        .HasColumnType("int")
+                                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                            b.Property<string>("IUnits")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                    b.Property<string>("NCoding")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(max)");
 
-                            b.Property<int>("IWId")
-                                .HasColumnType("int");
+                                    b.Property<DateTime>("NDate")
+                                        .HasColumnType("datetime2");
 
-                            b.HasKey("IId");
+                                    b.Property<string>("NName")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(max)");
 
-                            b.ToTable("Itemdetailss");
-                        });
+                                    b.Property<string>("NOdd")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(max)");
 
-                    modelBuilder.Entity("WMS.Models.Notarize", b =>
-                        {
-                            b.Property<int>("NId")
-                                .ValueGeneratedOnAdd()
-                                .HasColumnType("int")
-                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                    b.Property<string>("NOutlet")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(max)");
 
-                            b.Property<string>("NCoding")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                    b.Property<string>("NPerson")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(max)");
 
-                            b.Property<DateTime>("NDate")
-                                .HasColumnType("datetime2");
+                                    b.Property<int>("NQuantity")
+                                        .HasColumnType("int");
 
-                            b.Property<string>("NName")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                    b.Property<string>("NSCoding")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(max)");
 
-                            b.Property<string>("NOdd")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                    b.Property<string>("NSpecification")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(max)");
 
-                            b.Property<string>("NOutlet")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                    b.Property<int>("NState")
+                                        .HasColumnType("int");
 
-                            b.Property<string>("NPerson")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                    b.Property<int>("NWId")
+                                        .HasColumnType("int");
 
-                            b.Property<int>("NQuantity")
-                                .HasColumnType("int");
+                                    b.Property<string>("NWarm")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(max)");
 
-                            b.Property<string>("NSCoding")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                    b.HasKey("NId");
 
-                            b.Property<string>("NSpecification")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                    b.ToTable("Notarizes");
+                                });
 
-                            b.Property<int>("NState")
-                                .HasColumnType("int");
+                            modelBuilder.Entity("WMS.Models.Print", b =>
+                                {
+                                    b.Property<int>("PId")
+                                        .ValueGeneratedOnAdd()
+                                        .HasColumnType("int")
+                                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                            b.Property<int>("NWId")
-                                .HasColumnType("int");
+                                    b.Property<string>("PBatch")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(max)");
 
-                            b.Property<string>("NWarm")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                    b.Property<int>("PCategory")
+                                        .HasColumnType("int");
 
-                            b.HasKey("NId");
+                                    b.Property<string>("PCoding")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(max)");
 
-                            b.ToTable("Notarizes");
-                        });
+                                    b.Property<string>("PName")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(max)");
 
-                    modelBuilder.Entity("WMS.Models.Print", b =>
-                        {
-                            b.Property<int>("PId")
-                                .ValueGeneratedOnAdd()
-                                .HasColumnType("int")
-                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                    b.Property<string>("PPerson")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(max)");
 
-                            b.Property<string>("PBatch")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                    b.Property<int>("PQuantity")
+                                        .HasColumnType("int");
 
-                            b.Property<int>("PCategory")
-                                .HasColumnType("int");
+                                    b.Property<string>("PSpecification")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(max)");
 
-                            b.Property<string>("PCoding")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                    b.Property<DateTime>("PTime")
+                                        .HasColumnType("datetime2");
 
-                            b.Property<string>("PName")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                    b.Property<string>("PUnit")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(max)");
 
-                            b.Property<string>("PPerson")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                    b.Property<int>("PWId")
+                                        .HasColumnType("int");
 
-                            b.Property<int>("PQuantity")
-                                .HasColumnType("int");
+                                    b.HasKey("PId");
 
-                            b.Property<string>("PSpecification")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                    b.ToTable("Prints");
+                                });
 
-                            b.Property<DateTime>("PTime")
-                                .HasColumnType("datetime2");
+                            modelBuilder.Entity("WMS.Models.Purchase", b =>
+                                {
+                                    b.Property<int>("PurchaseId")
+                                        .ValueGeneratedOnAdd()
+                                        .HasColumnType("int")
+                                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                            b.Property<string>("PUnit")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                    b.Property<int>("PurchaseGoodsId")
+                                        .HasColumnType("int");
 
-                            b.Property<int>("PWId")
-                                .HasColumnType("int");
+                                    b.Property<string>("PurchaseName")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(200)")
+                                        .HasMaxLength(200);
 
-                            b.HasKey("PId");
+                                    b.Property<string>("PurchaseNum")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(200)")
+                                        .HasMaxLength(200);
 
-                            b.ToTable("Prints");
-                        });
+                                    b.Property<int>("PurchaseState")
+                                        .HasColumnType("int");
 
-                    modelBuilder.Entity("WMS.Models.Purchase", b =>
-                        {
-                            b.Property<int>("PurchaseId")
-                                .ValueGeneratedOnAdd()
-                                .HasColumnType("int")
-                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                    b.Property<int>("PurchaseSupplierId")
+                                        .HasColumnType("int");
 
-                            b.Property<int>("PurchaseGoodsId")
-                                .HasColumnType("int");
+                                    b.Property<DateTime>("PurchaseTime")
+                                        .HasColumnType("datetime2");
 
-                            b.Property<string>("PurchaseName")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(200)")
-                                .HasMaxLength(200);
+                                    b.HasKey("PurchaseId");
 
-                            b.Property<string>("PurchaseNum")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(200)")
-                                .HasMaxLength(200);
+                                    b.ToTable("Purchases");
+                                });
 
-                            b.Property<int>("PurchaseState")
-                                .HasColumnType("int");
+                            modelBuilder.Entity("WMS.Models.SendTheShipping", b =>
+                                {
+                                    b.Property<int>("SId")
+                                        .ValueGeneratedOnAdd()
+                                        .HasColumnType("int")
+                                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                            b.Property<int>("PurchaseSupplierId")
-                                .HasColumnType("int");
+                                    b.Property<int>("SAmount")
+                                        .HasColumnType("int");
 
-                            b.Property<DateTime>("PurchaseTime")
-                                .HasColumnType("datetime2");
+                                    b.Property<string>("SNumber")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(max)");
 
-                            b.HasKey("PurchaseId");
+                                    b.Property<string>("SRemind")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(max)");
 
-                            b.ToTable("Purchases");
-                        });
+                                    b.Property<int>("SWId")
+                                        .HasColumnType("int");
 
-                    modelBuilder.Entity("WMS.Models.SendTheShipping", b =>
-                        {
-                            b.Property<int>("SId")
-                                .ValueGeneratedOnAdd()
-                                .HasColumnType("int")
-                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                    b.Property<string>("SWarm")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(max)");
 
-                            b.Property<int>("SAmount")
-                                .HasColumnType("int");
+                                    b.HasKey("SId");
 
-                            b.Property<string>("SNumber")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                    b.ToTable("SendTheShippings");
+                                });
 
-                            b.Property<string>("SRemind")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                            modelBuilder.Entity("WMS.Models.Students", b =>
+                                {
+                                    b.Property<int>("Id")
+                                        .ValueGeneratedOnAdd()
+                                        .HasColumnType("int")
+                                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                            b.Property<int>("SWId")
-                                .HasColumnType("int");
+                                    b.Property<string>("Address")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(100)")
+                                        .HasMaxLength(100);
 
-                            b.Property<string>("SWarm")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                    b.Property<int>("Age")
+                                        .HasColumnType("int");
 
-                            b.HasKey("SId");
+                                    b.Property<string>("Name")
+                                        .IsRequired()
+                                        .HasColumnType("nvarchar(100)")
+                                        .HasMaxLength(100);
 
-                            b.ToTable("SendTheShippings");
-                        });
+                                    b.HasKey("Id");
 
-                    modelBuilder.Entity("WMS.Models.Students", b =>
-                        {
-                            b.Property<int>("Id")
-                                .ValueGeneratedOnAdd()
-                                .HasColumnType("int")
-                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                            b.Property<string>("Address")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(100)")
-                                .HasMaxLength(100);
-
-                            b.Property<int>("Age")
-                                .HasColumnType("int");
-
-                            b.Property<string>("Name")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(100)")
-                                .HasMaxLength(100);
-
-                            b.HasKey("Id");
-
-                            b.ToTable("Students");
-                        });
+                                    b.ToTable("Students");
+                                });
 #pragma warning restore 612, 618
+                        });
                 });
-        }
+    }
     }
 }
 
