@@ -59,6 +59,7 @@ namespace WMS.Database
         public DbSet<EX_ProductCategory> EX_ProductCategories { get; set; }
         public DbSet<EX_Renwu> EX_Renwus { get; set; }
         public DbSet<EX_GoodsOutbound> EX_GoodsOutbounds { get; set; }
+        public DbSet<GodownTodoId_list>  godownTodoId_Lists { get; set; }
 
 
     }

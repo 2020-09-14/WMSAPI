@@ -5333,23 +5333,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MECHREVO\\.nuget\\packages\\": {},
+    "C:\\Users\\T\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\大二项目\\WMSAPI\\WMS\\WMS\\WMS.csproj",
+      "projectUniqueName": "C:\\Users\\T\\Desktop\\api\\WMS\\WMS\\WMS.csproj",
       "projectName": "WMS",
-      "projectPath": "E:\\大二项目\\WMSAPI\\WMS\\WMS\\WMS.csproj",
-      "packagesPath": "C:\\Users\\MECHREVO\\.nuget\\packages\\",
-      "outputPath": "E:\\大二项目\\WMSAPI\\WMS\\WMS\\obj\\",
+      "projectPath": "C:\\Users\\T\\Desktop\\api\\WMS\\WMS\\WMS.csproj",
+      "packagesPath": "C:\\Users\\T\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\T\\Desktop\\api\\WMS\\WMS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\MECHREVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\T\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

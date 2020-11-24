@@ -18,6 +18,8 @@ namespace WMS.Services
 
         IEnumerable<EX_supplier> GetEnumerablesupplier();
         IEnumerable<Ex_GoodsTWO> GetEx_GoodsTWO();
+
+        IEnumerable<GodownTodoId_list> godownTodoId_Lists();
         void AddPurchase(Purchase purchase);
         void UptPurchase(int ids);
         bool Save();

@@ -7,14 +7,13 @@ using System.Threading.Tasks;
 namespace WMS.List
 {
     [NotMapped]
-    public class AOGregister_List
+    public class GodownTodoId_list
     {
-        public int AOGId { get; set; }
-        public int AOGPurchase { get; set; }
-        public int AOGState { get; set; }
-        public int AOGNum { get; set; }
-        public int AOGWarehouse { get; set; }
-        public string AOGRemark { get; set; }
+        public int GodownTodoId { get; set; }
+        public string GodownTodoNum { get; set; }
+        public int GodownTodoPurchaseId { get; set; }
+        public int GodownTodoState { get; set; }
+
         public int PurchaseId { get; set; }
         public string PurchaseNum { get; set; }
         public int PurchaseSupplierId { get; set; }

@@ -17,6 +17,7 @@ namespace WMS.Profiles
             CreateMap<Purchase_list, PurchaseShowDto>();
 
             CreateMap<EX_Shipment_list, EX_ShipmentDto>();
+            CreateMap<GodownTodoId_list, GodownTodoIdDto>();
             CreateMap<EX_ProductCategory, EX_ProductCategoryDto>();
             CreateMap<EX_Renwu, EX_RenwusDto>();
             CreateMap<Ex_GoodsTWO, Ex_GoodsTWODto>();
