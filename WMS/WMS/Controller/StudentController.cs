@@ -34,5 +34,6 @@ namespace WMS.Controller
             var studentDto = _mapper.Map<IEnumerable<StudentDto>>(studentFromDto);
             return Ok(studentDto);
         }
+        
     }
 }

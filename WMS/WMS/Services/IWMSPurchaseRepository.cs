@@ -12,7 +12,16 @@ namespace WMS.Services
     {
         IEnumerable<Purchase_list> GetPurchases();
 
+
+        IEnumerable<Goods> ShangGoods();
+        //接口写了个删除方法
+        int Shan(string ids);
+
+
+
+
         
+
 
         IEnumerable<Purchase_list> GetPurchasesId();
 
@@ -23,5 +32,6 @@ namespace WMS.Services
         void AddPurchase(Purchase purchase);
         void UptPurchase(int ids);
         bool Save();
+
     }
 }

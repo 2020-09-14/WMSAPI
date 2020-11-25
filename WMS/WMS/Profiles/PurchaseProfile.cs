@@ -16,6 +16,9 @@ namespace WMS.Profiles
             CreateMap<Purchase, PurchaseShowDto>();
             CreateMap<Purchase_list, PurchaseShowDto>();
 
+            CreateMap<Goods, GoodsDto>();
+
+
             CreateMap<EX_Shipment_list, EX_ShipmentDto>();
             CreateMap<GodownTodoId_list, GodownTodoIdDto>();
             CreateMap<EX_ProductCategory, EX_ProductCategoryDto>();
@@ -28,6 +31,7 @@ namespace WMS.Profiles
             CreateMap<CreatePurchaseDto, Purchase>();
             CreateMap<DailyStatementDto, DailyStatement>();
             CreateMap<EX_RenwusList, EX_rbao>();
+
 
         }
     }

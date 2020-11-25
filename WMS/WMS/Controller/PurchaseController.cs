@@ -93,6 +93,29 @@ namespace WMS.Controller
            
             return Ok(PurchaseDto);
         }
+
+        [Route("/api/goods1")]
+        [HttpGet]
+        public IActionResult Goods(int page,int size)
+        {
+            List<Goods> list = (List<Goods>)_wMS.ShangGoods();
+            int count = list.Count;
+            list = list.Skip((page - 1) * size).Take(size).ToList();
+            var model = new
+            {
+                count = count,
+                Golist = list
+            };
+            return Ok(model); 
+
+        }
+        [Route("/api/Del")]
+        [HttpGet]
+        public IActionResult Shan(string ids)
+        {
+            return Ok(_wMS.Shan(ids));
+        }
+
         [Route("/api/showsupplier")]
         [HttpGet]
         public IActionResult Getshowsupplier()
@@ -228,6 +251,7 @@ namespace WMS.Controller
             
 
         }
+
 
     }
 }

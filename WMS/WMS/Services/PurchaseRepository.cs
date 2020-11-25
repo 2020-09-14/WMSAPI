@@ -1,15 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Internal;
+﻿using Microsoft.EntityFrameworkCore.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 using WMS.Database;
 using WMS.Models;
 using Newtonsoft.Json;
 using WMS.List;
-
 namespace WMS.Services
 {
     public class PurchaseRepository : IWMSPurchaseRepository
@@ -76,8 +72,22 @@ namespace WMS.Services
             return bb;
         }
 
-       
 
+        public int Shan(string ids)
+        {
+            Goods goods = new Goods() { GoodsId = Convert.ToInt32(ids) };
+            _appDbContext.Goods.Attach(goods);
+            _appDbContext.Goods.Remove(goods);
+         //保存
+            return 
+            _appDbContext.SaveChanges();
+        }
+
+        public IEnumerable<Goods> ShangGoods()
+        {
+            return _appDbContext.Goods.ToList();
+        }
+                                                                 
         public bool Save()
         {
             return  _appDbContext.SaveChanges() >= 0;
@@ -103,8 +113,7 @@ namespace WMS.Services
             todo.GodownTodoPurchaseId = ids;
             todo.GodownTodoState = 0;
 
-            _appDbContext.GodownTodos.Add(todo);
-            _appDbContext.SaveChanges();
+           
         }
 
         public IEnumerable<Purchase_list> GetPurchasesId()
@@ -151,4 +160,5 @@ namespace WMS.Services
             return bb;
         }
     }
+
 }

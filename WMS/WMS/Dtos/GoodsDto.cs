@@ -1,22 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WMS.Models
+namespace WMS.Dtos
 {
-    public class Goods
+    public class GoodsDto
     {
-        //商品
-        [Key]
+       
         public int GoodsId { get; set; }
-        
+     
         public int Conding { get; set; }
 
         public int InventorySettings { get; set; }
 
-        [MaxLength(200)]
+     
         public string Gname { get; set; }
 
         public int level { get; set; }
