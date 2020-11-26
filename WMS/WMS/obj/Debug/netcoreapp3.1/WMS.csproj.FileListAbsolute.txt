@@ -633,13 +633,9 @@ C:\Users\lenovo\Desktop\WMS项目\API\WMS\WMS\bin\Debug\netcoreapp3.1\Newtonsoft
 E:\大二项目\WMSAPI\WMS\WMS\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 E:\大二项目\WMSAPI\WMS\WMS\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 E:\大二项目\WMSAPI\WMS\WMS\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
-<<<<<<< HEAD
-C:\Users\lenovo\Desktop\WMS项目\API\WMS\WMS\obj\Debug\netcoreapp3.1\WMS.csprojAssemblyReference.cache
-=======
 C:\Users\T\Desktop\api\WMS\WMS\obj\Debug\netcoreapp3.1\WMS.csprojAssemblyReference.cache
 C:\Users\86176\Desktop\WAS_api2\WMSAPI2\WMS\WMS\obj\Debug\netcoreapp3.1\WMS.csprojAssemblyReference.cache
 F:\项目\常少楠\WMS\WMS\obj\Debug\netcoreapp3.1\WMS.csprojAssemblyReference.cache
 D:\wmsapi\WMS\WMS\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 D:\wmsapi\WMS\WMS\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\wmsapi\WMS\WMS\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
->>>>>>> c6c93e62271a5b150aa8aea334eb4c73532bf285
