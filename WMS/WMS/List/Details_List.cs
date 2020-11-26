@@ -24,7 +24,7 @@ namespace WMS.List
         
         public string DSpecification { get; set; }          //规格
         
-        public decimal DPrice { get; set; }                 //价格
+        public float DPrice { get; set; }                 //价格
         
         public int DAmount { get; set; }                    //数量
         

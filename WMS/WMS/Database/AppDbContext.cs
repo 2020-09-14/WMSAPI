@@ -73,6 +73,12 @@ namespace WMS.Database
         public DbSet<EX_GoodsOutbound> EX_GoodsOutbounds { get; set; }
         public DbSet<ReservoirArea_list> ReservoirArea_list { get; set; }
         public DbSet<GodownTodoId_list>  godownTodoId_Lists { get; set; }
+<<<<<<< HEAD
+        public DbSet<WRZ_list> WRZ_list { get; set; }
+        public DbSet<WareHouserKeeper> WareHouserKeeper { get; set; }
+        public DbSet<WareHouseKeeperlist> WareHouseKeeperlist { get; set; }
+=======
         public DbSet<Cangkulian> cangkulians { get; set; }
+>>>>>>> c6c93e62271a5b150aa8aea334eb4c73532bf285
     }
 }

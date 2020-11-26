@@ -25,7 +25,7 @@ namespace WMS.Models
         [Required]
         public string IUnits { get; set; }              //计量单位
         [Required]
-        public decimal IPrice { get; set; }             //单价
+        public float IPrice { get; set; }             //单价
         [Required]
         public string IPicture { get; set; }            //图片
         [Required]
@@ -33,6 +33,6 @@ namespace WMS.Models
         [Required]
         public int ISum { get; set; }                   //待审核调拨总数
         [Required]
-        public decimal IMoney { get; set; }             //审核金额
+        public float IMoney { get; set; }             //审核金额
     }
 }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WMS.Database;
+using WMS.Dtos;
 using WMS.List;
 using WMS.Models;
 
@@ -86,7 +87,10 @@ namespace WMS.Services
                     on w.WarehouseId equals r.WIdd
                     select new
                     {
-                        w.WarehouseId, w.Wname,r.Rname,r.TemperatureZone
+                        w.WarehouseId,
+                        w.Wname,
+                        r.Rname,
+                        r.TemperatureZone
                     };
             string str = JsonConvert.SerializeObject(a);
             IEnumerable<ReservoirArea_list> b = JsonConvert.DeserializeObject<IEnumerable<ReservoirArea_list>>(str);
@@ -124,14 +128,163 @@ namespace WMS.Services
             aa.Remark = id.Remark;
             aa.TemperatureZone = id.TemperatureZone;
             aa.WIdd = id.WIdd;
+            _appDbContext.SaveChanges();
         }
         /// <summary>
         /// 删除
         /// </summary>
         /// <param name="id"></param>
-        public void DelEX_ReservoirArea(int id)
+        public void DelEX_ReservoirArea(string id)
         {
-            throw new NotImplementedException();
+            int a = Convert.ToInt32(id);
+            var aa = _appDbContext.EX_ReservoirArea.Where(s => s.WIdd == a).FirstOrDefault();
+            _appDbContext.EX_ReservoirArea.Remove(aa);
+            _appDbContext.SaveChanges();
+
+        }
+        /// <summary>
+        /// 显示仓库库区货位
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<WRZ_list> GetGoodsAllocation()
+        {
+            var a = from w in _appDbContext.Set<EX_Warehouse>()
+                    join r in _appDbContext.Set<EX_ReservoirArea>()
+                    on w.WarehouseId equals r.WIdd
+                    join z in _appDbContext.Set<EX_Zhy>()
+                    on r.ReservoirAreaId equals z.Ridd
+                    select new
+                    {
+                        w.WarehouseId,
+                        w.Wname,
+                        r.Rname,
+                        z.Zname
+                    };
+            string str = JsonConvert.SerializeObject(a);
+            IEnumerable<WRZ_list> b = JsonConvert.DeserializeObject<IEnumerable<WRZ_list>>(str);
+            return b;
+        }
+        /// <summary>
+        /// 添加货位
+        /// </summary>
+        /// <param name="zhy"></param>
+        public void AddGoodsAllocation(EX_Zhy zhy)
+        {
+            if (zhy == null)
+            {
+                throw new ArgumentException(nameof(zhy));
+            }
+            _appDbContext.EX_Zhy.Add(zhy);
+            _appDbContext.SaveChanges();
+        }
+        /// <summary>
+        /// 修改库区
+        /// </summary>
+        /// <param name="id"></param>
+        public void UptEX_Zhy(WRZ_list id)
+        {
+            var aa = _appDbContext.WRZ_list.Where(r => r.WarehouseId.Equals(id.WarehouseId)).FirstOrDefault();
+            aa.Rname = id.Rname;
+            aa.Remark = id.Remark;
+            aa.InventorySettings = id.InventorySettings;
+            aa.Ridd = id.Ridd;
+            _appDbContext.SaveChanges();
+        }
+        /// <summary>
+        /// 删除货位
+        /// </summary>
+        /// <param name="id"></param>
+        public void DelEX_Zhy(string id)
+        {
+            int a = Convert.ToInt32(id);
+            var aa = _appDbContext.EX_Zhy.Where(s => s.ZhyId == a).FirstOrDefault();
+            _appDbContext.EX_Zhy.Remove(aa);
+            _appDbContext.SaveChanges();
+        }
+        /// <summary>
+        /// 仓库管理权限 查询显示
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<WareHouseKeeperlist> WareHouseKeeperlist()
+        {
+            var a = from w in _appDbContext.Set<EX_Warehouse>()
+                    join r in _appDbContext.Set<EX_ReservoirArea>()
+                    on w.WarehouseId equals r.WIdd
+                    join k in _appDbContext.Set<WareHouserKeeper>()
+                    on w.WarehouseId equals k.WId
+                    select new
+                    {
+                        w.WarehouseId,
+                        w.Wname,
+                        r.Rname,
+                        k.KeeperName,
+                        k.KeeperPhone
+                    };
+            string str = JsonConvert.SerializeObject(a);
+            IEnumerable<WareHouseKeeperlist> b = JsonConvert.DeserializeObject<IEnumerable<WareHouseKeeperlist>>(str);
+            return b;
+        }
+        /// <summary>
+        /// 修改权限
+        /// </summary>
+        /// <param name="id"></param>
+        public void UptWareHouseKeeper(WareHouseKeeperlist id)
+        {
+            var aa = _appDbContext.WareHouseKeeperlist.Where(r => r.WarehouseId.Equals(id.WarehouseId)).FirstOrDefault();
+            aa.WId = id.WId;
+            _appDbContext.SaveChanges();
+        }
+        /// <summary>
+        /// 显示库管理员
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<WareHouserKeeper> GetWareHouseKeeper()
+        {
+            return _appDbContext.WareHouserKeeper.ToList();
+        }
+        /// <summary>
+        /// 添加库管员
+        /// </summary>
+        /// <param name="zhy"></param>
+        public void AddKeeper(WareHouserKeeper k)
+        {
+            if (k == null)
+            {
+                throw new ArgumentException(nameof(k));
+            }
+            _appDbContext.WareHouserKeeper.Add(k);
+            _appDbContext.SaveChanges();
+        }
+        /// <summary>
+        /// 修改库管理员
+        /// </summary>
+        /// <param name="id"></param>
+        public void UptKeeper(KeeperDto id)
+        {
+            var aa = _appDbContext.WareHouserKeeper.Where(r => r.WareHouserKeeperId.Equals(id.WareHouserKeeperId)).FirstOrDefault();
+            aa.KeeperName = id.KeeperName;
+            aa.KeeperPhone = id.KeeperPhone;
+            _appDbContext.SaveChanges();
+        }
+        /// <summary>
+        /// 更改状态
+        /// </summary>
+        /// <param name="id"></param>
+        public void StartUsing(int id)
+        {
+            var aa = _appDbContext.WareHouserKeeper.Where(r => r.WareHouserKeeperId.Equals(id)).FirstOrDefault();
+            aa.State = 1;
+            _appDbContext.SaveChanges();
+        }
+        /// <summary>
+        /// 更改状态
+        /// </summary>
+        /// <param name="id"></param>
+        public void StopUsing(int id)
+        {
+            var aa = _appDbContext.WareHouserKeeper.Where(r => r.WareHouserKeeperId.Equals(id)).FirstOrDefault();
+            aa.State = 0;
+            _appDbContext.SaveChanges();
         }
     }
 }

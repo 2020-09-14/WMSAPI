@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\wmsapi\\WMS\\WMS\\WMS.csproj": {}
+    "C:\\Users\\lenovo\\Desktop\\WMS项目\\API\\WMS\\WMS\\WMS.csproj": {}
   },
   "projects": {
-    "D:\\wmsapi\\WMS\\WMS\\WMS.csproj": {
+    "C:\\Users\\lenovo\\Desktop\\WMS项目\\API\\WMS\\WMS\\WMS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\wmsapi\\WMS\\WMS\\WMS.csproj",
+        "projectUniqueName": "C:\\Users\\lenovo\\Desktop\\WMS项目\\API\\WMS\\WMS\\WMS.csproj",
         "projectName": "WMS",
-        "projectPath": "D:\\wmsapi\\WMS\\WMS\\WMS.csproj",
-        "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
-        "outputPath": "D:\\wmsapi\\WMS\\WMS\\obj\\",
+        "projectPath": "C:\\Users\\lenovo\\Desktop\\WMS项目\\API\\WMS\\WMS\\WMS.csproj",
+        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lenovo\\Desktop\\WMS项目\\API\\WMS\\WMS\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
+          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +25,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "D:\\新建文件夹\\Components\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -92,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

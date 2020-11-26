@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace WMS.Dtos
 {
+    
     public class PurchaseShowDto
     {
 
