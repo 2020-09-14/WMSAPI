@@ -13,6 +13,7 @@ namespace WMS.Models
         public string GodownTodoNum { get; set; }
         public int GodownTodoPurchaseId { get; set; }
         public int GodownTodoState { get; set; }
+        public int GodownWarehouse { get; set; }
 
 
     }

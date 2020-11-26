@@ -7,8 +7,27 @@ using System.Threading.Tasks;
 namespace WMS.List
 {
     [NotMapped]
-    public class GodownTodoId_list
+    public class Cangkulian
     {
+        public int PId { get; set; }
+        public int ProductCategoryId { get; set; }
+        public int WarehouseId { get; set; }
+        public int Ex_GoodsTWOId { get; set; }
+        
+        public int ZhyId { get; set; }
+
+        public int ReservoirAreaId { get; set; }
+
+        public string Rname { get; set; }
+
+        public string Remark { get; set; }
+  
+        public string TemperatureZone { get; set; }
+
+        public int WIdd { get; set; }
+        public string Zname { get; set; }
+        public int Ridd { get; set; }
+        public int InventorySettings { get; set; }
         public int GodownTodoId { get; set; }
         public string GodownTodoNum { get; set; }
         public int GodownTodoPurchaseId { get; set; }
@@ -29,7 +48,7 @@ namespace WMS.List
 
         public string Serial { get; set; }
 
-        public int Ex_GoodsTWOId { get; set; }
+    
         public string GWname { get; set; }
         public string Specification { get; set; }
         public int OneIdd { get; set; }

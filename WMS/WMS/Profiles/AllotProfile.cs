@@ -19,7 +19,7 @@ namespace WMS.Profiles
             CreateMap<SendTheShipping, SendTheShippingShowDto>();
             CreateMap<BStorage, BStorageShowDto>();
             CreateMap<Notarize, NotarizeShowDto>();
-            CreateMap<Details_List, DetailsShowDto>();
+           CreateMap<Details_List, DetailsShowDto>();
         }
     }
 }

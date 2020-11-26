@@ -136,6 +136,7 @@ namespace WMS.Services
                          a.GodownTodoNum,
                          a.GodownTodoPurchaseId,
                          a.GodownTodoState,
+                         a.GodownWarehouse,
                          b.PurchaseGoodsId,
                          b.PurchaseId,
                          b.PurchaseNum,
@@ -158,6 +159,60 @@ namespace WMS.Services
             string str = JsonConvert.SerializeObject(aa);
             IEnumerable<GodownTodoId_list> bb = JsonConvert.DeserializeObject<IEnumerable<GodownTodoId_list>>(str);
             return bb;
+        }
+
+        public void UptGodown(GodownTodo godownTodo)
+        {
+            var aa = _appDbContext.GodownTodos.Where(s => s.GodownTodoId.Equals(godownTodo.GodownTodoId)).FirstOrDefault();
+            aa.GodownTodoState = 2;
+            aa.GodownWarehouse = godownTodo.GodownWarehouse;
+            _appDbContext.SaveChanges();
+           
+        }
+        public IEnumerable<Cangkulian> aaa()
+        {
+            var aa = from a in _appDbContext.Set<GodownTodo>()
+                     join b in _appDbContext.Set<Purchase>()
+                         on a.GodownTodoPurchaseId equals b.PurchaseId
+                     join p in _appDbContext.Set<EX_supplier>()
+                         on b.PurchaseSupplierId equals p.SupplierId
+                     join c in _appDbContext.Set<Ex_GoodsTWO>()
+                     on b.PurchaseGoodsId equals c.OneIdd 
+                     join e in _appDbContext.Set<EX_Warehouse>() on a.GodownWarehouse equals e.WarehouseId join f in _appDbContext.Set<EX_ReservoirArea>() on e.WarehouseId equals f.WIdd join g in _appDbContext.Set<EX_Zhy>() on f.ReservoirAreaId equals g.Ridd
+                     select new
+                     {
+                         a.GodownTodoId,
+                         a.GodownTodoNum,
+                         a.GodownTodoPurchaseId,
+                         a.GodownTodoState,
+                         a.GodownWarehouse,
+                         b.PurchaseGoodsId,
+                         b.PurchaseId,
+                         b.PurchaseNum,
+                         b.PurchaseSupplierId,
+                         b.PurchaseTime,
+                         b.PurchaseName,
+                         b.PurchaseState,
+                         p.SupplierName,
+                         p.Serial,
+                         p.SupplierId,
+                         c.Ex_GoodsTWOId,
+                         c.GWname,
+                         c.Specification,
+                         c.OneIdd,
+                         c.Coding,
+                         c.TWOsum,
+                         c.EX_ZhyId,
+                         e.Wname,
+                         f.Rname,
+                         g.Zname
+
+                     };
+            
+            string str = JsonConvert.SerializeObject(aa);
+        IEnumerable<Cangkulian> bb = JsonConvert.DeserializeObject<IEnumerable<Cangkulian>>(str);
+            return bb;
+            
         }
     }
 

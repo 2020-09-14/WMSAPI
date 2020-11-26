@@ -11,7 +11,7 @@ namespace WMS.Dtos
         public string GodownTodoNum { get; set; }
         public int GodownTodoPurchaseId { get; set; }
         public int GodownTodoState { get; set; }
-
+        public int GodownWarehouse { get; set; }
         public int PurchaseId { get; set; }
         public string PurchaseNum { get; set; }
         public int PurchaseSupplierId { get; set; }

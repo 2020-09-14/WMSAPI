@@ -1,26 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "F:\\项目\\常少楠\\WMS\\WMS\\WMS.csproj": {}
+    "C:\\Users\\T\\Desktop\\api\\WMS\\WMS\\WMS.csproj": {}
   },
   "projects": {
-    "F:\\项目\\常少楠\\WMS\\WMS\\WMS.csproj": {
+    "C:\\Users\\T\\Desktop\\api\\WMS\\WMS\\WMS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\项目\\常少楠\\WMS\\WMS\\WMS.csproj",
+        "projectUniqueName": "C:\\Users\\T\\Desktop\\api\\WMS\\WMS\\WMS.csproj",
         "projectName": "WMS",
-        "projectPath": "F:\\项目\\常少楠\\WMS\\WMS\\WMS.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "F:\\项目\\常少楠\\WMS\\WMS\\obj\\",
+        "projectPath": "C:\\Users\\T\\Desktop\\api\\WMS\\WMS\\WMS.csproj",
+        "packagesPath": "C:\\Users\\T\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\T\\Desktop\\api\\WMS\\WMS\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\T\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"

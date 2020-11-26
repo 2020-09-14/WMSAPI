@@ -15,7 +15,7 @@ namespace WMS.Services
         IEnumerable<SendTheShipping> GetSendTheShippings();
         IEnumerable<BStorage> GetBStorages();
         IEnumerable<Notarize> Notarizes();
-        IEnumerable<Details_List> GetShowDetails();          //显示补货
+       IEnumerable<Details_List> GetShowDetails();          //显示补货
         IEnumerable<Itemdetails_List> GetItemdetailsSH();    //审核
         IEnumerable<Itemdetails_List> GetItemdetailsCK();    //查看
     }

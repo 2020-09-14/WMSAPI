@@ -46,7 +46,7 @@ namespace WMS.Database
 
         public DbSet<Allot> Allots { get; set; }
         public DbSet<BStorage> BStorages { get; set; }
-        public DbSet<Details> Detailss { get; set; }
+       public DbSet<Details> Detailss { get; set; }
         public DbSet<EDispose> EDisposes { get; set; }
         public DbSet<Itemdetails> Itemdetailss { get; set; }
         public DbSet<Notarize> Notarizes { get; set; }
@@ -61,5 +61,6 @@ namespace WMS.Database
         public DbSet<EX_GoodsOutbound> EX_GoodsOutbounds { get; set; }
         public DbSet<ReservoirArea_list> ReservoirArea_list { get; set; }
         public DbSet<GodownTodoId_list>  godownTodoId_Lists { get; set; }
+        public DbSet<Cangkulian> cangkulians { get; set; }
     }
 }

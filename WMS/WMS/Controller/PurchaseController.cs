@@ -251,6 +251,22 @@ namespace WMS.Controller
             
 
         }
+        [Route("/api/UptGodown")]
+        [HttpPost]
+        public IActionResult UptGodown([FromBody]GodownTodo godownTodo)
+        {
+             _wMS.UptGodown(godownTodo);
+          var a=  _wMS.Save();
+            return Ok(a);
+        }
+        [Route("/api/xianshisss")]
+        [HttpGet]
+        public IActionResult xianshisss()
+        {
+
+            var a = _wMS.aaa();
+            return Ok(a);
+        }
 
 
     }

@@ -29,8 +29,11 @@ namespace WMS.Services
         IEnumerable<Ex_GoodsTWO> GetEx_GoodsTWO();
 
         IEnumerable<GodownTodoId_list> godownTodoId_Lists();
+        IEnumerable<Cangkulian> aaa();
         void AddPurchase(Purchase purchase);
-        void UptPurchase(int ids);
+        void UptGodown(GodownTodo godownTodo);
+        void UptPurchase(int ids); 
+
         bool Save();
 
     }
