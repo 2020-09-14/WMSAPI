@@ -5333,23 +5333,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\T\\.nuget\\packages\\": {},
+    "C:\\Users\\dell\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\T\\Desktop\\api\\WMS\\WMS\\WMS.csproj",
+      "projectUniqueName": "D:\\wmsapi\\WMS\\WMS\\WMS.csproj",
       "projectName": "WMS",
-      "projectPath": "C:\\Users\\T\\Desktop\\api\\WMS\\WMS\\WMS.csproj",
-      "packagesPath": "C:\\Users\\T\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\T\\Desktop\\api\\WMS\\WMS\\obj\\",
+      "projectPath": "D:\\wmsapi\\WMS\\WMS\\WMS.csproj",
+      "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
+      "outputPath": "D:\\wmsapi\\WMS\\WMS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\T\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5357,6 +5358,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "D:\\新建文件夹\\Components\\System\\Components\\Packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5422,7 +5424,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

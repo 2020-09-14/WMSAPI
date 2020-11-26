@@ -40,7 +40,10 @@ namespace WMS.Services
 
         public IEnumerable<Purchase_list> GetPurchases()
         {
+
+
            
+
 
             var aa = from b in _appDbContext.Set<Purchase>()
                         join p in _appDbContext.Set<EX_supplier>()
@@ -70,6 +73,8 @@ namespace WMS.Services
             string str = JsonConvert.SerializeObject(aa);
             IEnumerable<Purchase_list> bb = JsonConvert.DeserializeObject<IEnumerable<Purchase_list>>(str);
             return bb;
+
+
         }
 
 
@@ -213,7 +218,10 @@ namespace WMS.Services
         IEnumerable<Cangkulian> bb = JsonConvert.DeserializeObject<IEnumerable<Cangkulian>>(str);
             return bb;
             
+
         }
+
+       
     }
 
 }

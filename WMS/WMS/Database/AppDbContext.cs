@@ -41,6 +41,17 @@ namespace WMS.Database
         public DbSet<AOGregister> AOGregisters { get; set; }
         public DbSet<AOGQualityTest> AOGQualityTests { get; set; }
         public DbSet<Godown> Godowns { get; set; }
+
+
+      
+        
+
+        public DbSet<check_list> check_Lists { get; set; }
+        public DbSet<Check> Checks { get; set; }
+
+
+
+
         public DbSet<ProWareHouse> ProWareHouse { get; set; }
 
 
@@ -52,6 +63,7 @@ namespace WMS.Database
         public DbSet<Notarize> Notarizes { get; set; }
         public DbSet<Print> Prints { get; set; }
         public DbSet<SendTheShipping> SendTheShippings { get; set; }
+
 
         public DbSet<GodownTodo> GodownTodos { get; set; }
 

@@ -1,19 +1,13 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WMS.Database;
 using WMS.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using System.Configuration;
 using AutoMapper;
-
 namespace WMS
 {
     public class Startup
@@ -35,11 +29,20 @@ namespace WMS
 
             services.AddControllersWithViews();
 
+
+     
+
+            services.AddScoped<IWMSCheckRepository, CheckRepository>();
+            
+            services.AddScoped<IWMSPurchaseRepository, PurchaseRepository>();
+
+
             services.AddScoped<IWMSRepository,StudentsRepository>();
             services.AddScoped<IWMSAllot, AllotRepository>();
             services.AddScoped<IWMSPurchaseRepository, PurchaseRepository>();
             services.AddScoped<IWMSInventoryRepository, InventoryRepssitory>();
             services.AddScoped<EX_Wangchao, EX_Wangchaolist>();
+
             ;            services.AddDbContext<AppDbContext>(option=> {
                 option.UseSqlServer(_configuration["DbContext:ConnectionString"]);
             });

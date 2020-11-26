@@ -70,7 +70,80 @@ namespace WMS.Migrations
                     b.ToTable("AOGregisters");
                 });
 
+
+            modelBuilder.Entity("WMS.Models.Check", b =>
+                {
+                    b.Property<int>("CheckTaskId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("BatchNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CheckCNo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CheckDetail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CheckName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CheckNum")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CheckNumber")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CheckStates")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CheckTimes")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DefaultInventoryPeople")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GoodsAllocation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("GoodsIds")
+                        .HasColumnType("int");
+
+                    b.Property<int>("GoodsTWOIds")
+                        .HasColumnType("int");
+
+                    b.Property<string>("HjName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductCategoryIds")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("TaskTimes")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("TermOfValidity")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("WareHouseName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("kQName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CheckTaskId");
+
+                    b.ToTable("Checks");
+                });
+
+            modelBuilder.Entity("WMS.Models.DailyStatement", b =>
+
             modelBuilder.Entity("WMS.Models.Allot", b =>
+
                 {
                     b.Property<int>("AId")
                         .ValueGeneratedOnAdd()
@@ -111,7 +184,7 @@ namespace WMS.Migrations
                     b.HasKey("AId");
 
                     b.ToTable("Allots");
-                });
+                }));
 
             modelBuilder.Entity("WMS.Models.BStorage", b =>
                 {

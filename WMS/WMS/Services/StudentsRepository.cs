@@ -15,10 +15,10 @@ namespace WMS.Services
         {
             _appDbContext = appDbContext;
         }
-        public async Task<IEnumerable<Students>> GetStudents()
-        {
-            return await _appDbContext.Students.ToListAsync();
-        }
+        //public async Task<IEnumerable<Students>> GetStudents()
+        //{
+        //    return await _appDbContext.Students.ToListAsync();
+        //}
         
         /// <summary>
         /// 保存

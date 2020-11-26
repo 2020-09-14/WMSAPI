@@ -22,18 +22,7 @@ namespace WMS.Controller
             _wMS = wMS;
             _mapper = mapper;
         }
-        [Route("/api/show")]
-        [HttpGet]
-        public async Task<IActionResult> GetShow()
-        {
-            var studentFromDto = await _wMS.GetStudents();
-            if (studentFromDto == null || studentFromDto.Count() <= 0)
-            {
-                return NotFound("没有数据！！！");
-            }
-            var studentDto = _mapper.Map<IEnumerable<StudentDto>>(studentFromDto);
-            return Ok(studentDto);
-        }
+ 
         
     }
 }
