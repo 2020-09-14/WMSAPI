@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WMS.List;
 using WMS.Dtos;
+using WMS.Models;
 
 namespace WMS.Helper
 {
-    public class DetailsShowHelper
+    public class BStorageHelper
     {
-        public List<DetailsShowDto> Details_List { get; set; }
+        public List<BStorageShowDto> bstorage_list { get; set; }
 
         public int totalCount { get; set; }
         public int pageIndex { get; set; }

@@ -16,8 +16,13 @@ namespace WMS.Services
         {
             _appDbContext = appDbContext;
         }
+        //单删调拨列表
+        //public IEnumerable<Allot> DelAllot()
+        //{
+            
+        //}
         //显示调拨入库
-        public IEnumerable<BStorage> GetBStorages()
+            public IEnumerable<BStorage> GetBStorages()
         {
             return _appDbContext.BStorages;
         }
@@ -108,6 +113,23 @@ namespace WMS.Services
         {
             return _appDbContext.Allots;
         }
+        //显示补货单号
+        public IEnumerable<Details_List> GetShowBH()
+        {
+            var aa = from d in _appDbContext.Set<Details>()
+                     join r in _appDbContext.Set<EX_Renwu>()
+                     on d.DWId equals r.ShipmentId
+                     select new
+                     {
+                         r.ShipmentId,
+                         r.ShCoding,
+                         r.Createtime
+                     };
+            string str = JsonConvert.SerializeObject(aa);
+            IEnumerable<Details_List> bb = JsonConvert.DeserializeObject<IEnumerable<Details_List>>(str);
+            return bb;
+        }
+
         //显示补货详情
         public IEnumerable<Details_List> GetShowDetails()
         {
@@ -133,6 +155,26 @@ namespace WMS.Services
                      };
             string str = JsonConvert.SerializeObject(aa);
             IEnumerable<Details_List> bb = JsonConvert.DeserializeObject<IEnumerable<Details_List>>(str);
+            return bb;
+        }
+
+        //显示发配区
+        public IEnumerable<SendTheShipping_List> GetShowSendTheShipping()
+        {
+            var aa = from s in _appDbContext.Set<SendTheShipping>()
+                     join g in _appDbContext.Set<Ex_GoodsOne>()
+                     on s.SWId equals g.Ex_GoodsOneId
+                     select new
+                     {
+                         s.SId,
+                         s.SNumber,
+                         s.SWarm,
+                         g.ONEsum,
+                         s.SRemind,
+                         g.State
+                     };
+            string str = JsonConvert.SerializeObject(aa);
+            IEnumerable<SendTheShipping_List> bb = JsonConvert.DeserializeObject<IEnumerable<SendTheShipping_List>>(str);
             return bb;
         }
 

@@ -50,5 +50,10 @@ namespace WMS.List
         
         public string Coding { get; set; }                //编码
         public int TWOsum { get; set; }                   //可用库存
+
+
+        public int ShipmentId { get; set; }              //任务序号
+        public string ShCoding { get; set; }             //任务编号
+        public DateTime Createtime { get; set; }         //任务下达时间
     }
 }

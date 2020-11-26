@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lenovo\\Desktop\\WMS项目\\API\\WMS\\WMS\\WMS.csproj": {}
+    "E:\\大二项目\\WMSAPI\\WMS\\WMS\\WMS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lenovo\\Desktop\\WMS项目\\API\\WMS\\WMS\\WMS.csproj": {
+    "E:\\大二项目\\WMSAPI\\WMS\\WMS\\WMS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lenovo\\Desktop\\WMS项目\\API\\WMS\\WMS\\WMS.csproj",
+        "projectUniqueName": "E:\\大二项目\\WMSAPI\\WMS\\WMS\\WMS.csproj",
         "projectName": "WMS",
-        "projectPath": "C:\\Users\\lenovo\\Desktop\\WMS项目\\API\\WMS\\WMS\\WMS.csproj",
-        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lenovo\\Desktop\\WMS项目\\API\\WMS\\WMS\\obj\\",
+        "projectPath": "E:\\大二项目\\WMSAPI\\WMS\\WMS\\WMS.csproj",
+        "packagesPath": "C:\\Users\\MECHREVO\\.nuget\\packages\\",
+        "outputPath": "E:\\大二项目\\WMSAPI\\WMS\\WMS\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MECHREVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -62,6 +62,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.9, )"
+            },
+            "NPOI": {
+              "target": "Package",
+              "version": "[2.5.1, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

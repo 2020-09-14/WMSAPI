@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using WMS.Dtos;
 using WMS.Helper;
 using WMS.Services;
+using WMS.Models;
 
 namespace WMS.Controller
 {
@@ -51,7 +52,8 @@ namespace WMS.Controller
         public IActionResult ItemdetailShow(int pageIndex = 1, int pageSize = 3)
         {
             var ItemdetailsFromDto = _wMS.GetItemdetails();
-            int count = ItemdetailsFromDto.Count();
+            var ItemdetailsDto = _mapper.Map<IEnumerable<ItemdetailsShowDto>>(ItemdetailsFromDto);
+            int count = ItemdetailsDto.Count();
             int page;
             if (count % pageSize == 0)
             {
@@ -65,7 +67,7 @@ namespace WMS.Controller
             pd.pageSize = pageSize;
             pd.pageIndex = pageIndex;
             pd.totalCount = count;
-            pd.Itemdetails_list = ItemdetailsFromDto.OrderBy(x => x.IId).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
+            pd.Itemdetails_list = ItemdetailsDto.OrderBy(x => x.IId).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
             return Ok(pd);
         }
         [Route("/api/EDisposeShow")]
@@ -94,27 +96,49 @@ namespace WMS.Controller
         }
         [Route("/api/BStorageShow")]
         [HttpGet]
-        public IActionResult BStorageShow()
+        public IActionResult BStorageShow(int pageIndex = 1, int pageSize = 3)
         {
             var BStorageFromDto = _wMS.GetBStorages();
-            if (BStorageFromDto == null || BStorageFromDto.Count() < 0)
-            {
-                return NotFound("没有数据！！！");
-            }
             var BStorageDto = _mapper.Map<IEnumerable<BStorageShowDto>>(BStorageFromDto);
-            return Ok(BStorageDto);
+            int count = BStorageDto.Count();
+            int page;
+            if (count % pageSize == 0)
+            {
+                page = count / pageSize;
+            }
+            else
+            {
+                page = count / pageSize + 1;
+            }
+            BStorageHelper pd = new BStorageHelper();
+            pd.pageSize = pageSize;
+            pd.pageIndex = pageIndex;
+            pd.totalCount = count;
+            pd.bstorage_list = BStorageDto.OrderBy(x => x.BId).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
+            return Ok(pd);
         }
         [Route("/api/NotarizeShow")]
         [HttpGet]
-        public IActionResult NotarizeShow()
+        public IActionResult NotarizeShow(int pageIndex = 1, int pageSize = 3)
         {
             var NotarizeFromDto = _wMS.Notarizes();
-            if (NotarizeFromDto == null || NotarizeFromDto.Count() < 0)
-            {
-                return NotFound("没有数据！！！");
-            }
             var NotarizeDto = _mapper.Map<IEnumerable<NotarizeShowDto>>(NotarizeFromDto);
-            return Ok(NotarizeDto);
+            int count = NotarizeDto.Count();
+            int page;
+            if (count % pageSize == 0)
+            {
+                page = count / pageSize;
+            }
+            else
+            {
+                page = count / pageSize + 1;
+            }
+            NotarizeHelper pd = new NotarizeHelper();
+            pd.pageSize = pageSize;
+            pd.pageIndex = pageIndex;
+            pd.totalCount = count;
+            pd.Notarize_list = NotarizeDto.OrderBy(x => x.NId).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
+            return Ok(pd);
         }
         [Route("/api/DetailsShow")]
         [HttpGet]
@@ -124,7 +148,7 @@ namespace WMS.Controller
             var DetailsDto = _mapper.Map<IEnumerable<DetailsShowDto>>(DetailsFromDto);
             int count = DetailsDto.Count();
             int page;
-            if (count % pageSize == 0)
+            if (count % pageSize == 0)                                                                                                  
             {
                 page = count / pageSize;
             }
@@ -136,7 +160,7 @@ namespace WMS.Controller
             pd.pageSize = pageSize;
             pd.pageIndex = pageIndex;
             pd.totalCount = count;
-            pd.Details_List = DetailsFromDto.OrderBy(x => x.DId).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
+            pd.Details_List = DetailsDto.OrderBy(x => x.DId).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
             return Ok(pd);
         }
         [Route("/api/AuditShow")]
@@ -159,7 +183,7 @@ namespace WMS.Controller
             pd.pageSize = pageSize;
             pd.pageIndex = pageIndex;
             pd.totalCount = count;
-            pd.Itemdetails_list = AuditShowFromDto.OrderBy(x => x.IId).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
+            pd.Itemdetails_list = AuditDto.OrderBy(x => x.IId).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
             return Ok(pd);
         }
         [Route("/api/LookShow")]
@@ -182,7 +206,53 @@ namespace WMS.Controller
             pd.pageSize = pageSize;
             pd.pageIndex = pageIndex;
             pd.totalCount = count;
-            pd.Itemdetails_list = LookShowFromDto.OrderBy(x => x.IId).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
+            pd.Itemdetails_list = LookDto.OrderBy(x => x.IId).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
+            return Ok(pd);
+        }
+        [Route("/api/DetailsBHShow")]
+        [HttpGet]
+        public IActionResult DetailsBHShow(int pageIndex = 1, int pageSize = 3)
+        {
+            var DetailsBHFromDto = _wMS.GetShowBH();
+            var DetailsBHDto = _mapper.Map<IEnumerable<DetailsShowDto>>(DetailsBHFromDto);
+            int count = DetailsBHDto.Count();
+            int page;
+            if (count % pageSize == 0)
+            {
+                page = count / pageSize;
+            }
+            else
+            {
+                page = count / pageSize + 1;
+            }
+            DetailsShowHelper pd = new DetailsShowHelper();
+            pd.pageSize = pageSize;
+            pd.pageIndex = pageIndex;
+            pd.totalCount = count;
+            pd.Details_List = DetailsBHDto.OrderBy(x => x.DId).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
+            return Ok(pd);
+        }
+        [Route("/api/ShowSendTheShippingShow")]
+        [HttpGet]
+        public IActionResult ShowSendTheShippingShow(int pageIndex = 1, int pageSize = 3)
+        {
+            var ShowSendTheShippingFromDto = _wMS.GetShowSendTheShipping();
+            var ShowSendTheShippingDto = _mapper.Map<IEnumerable<SendTheShippingShowDto>>(ShowSendTheShippingFromDto);
+            int count = ShowSendTheShippingDto.Count();
+            int page;
+            if (count % pageSize == 0)
+            {
+                page = count / pageSize;
+            }
+            else
+            {
+                page = count / pageSize + 1;
+            }
+            SendTheShipping_ListHelper pd = new SendTheShipping_ListHelper();
+            pd.pageSize = pageSize;
+            pd.pageIndex = pageIndex;
+            pd.totalCount = count;
+            pd.SendTheShipping_list = ShowSendTheShippingDto.OrderBy(x => x.SId).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
             return Ok(pd);
         }
     }

@@ -444,8 +444,6 @@ E:\大二项目\WMSAPI\WMS\WMS\obj\Debug\netcoreapp3.1\WMS.dll
 E:\大二项目\WMSAPI\WMS\WMS\obj\Debug\netcoreapp3.1\WMS.pdb
 E:\大二项目\WMSAPI\WMS\WMS\obj\Debug\netcoreapp3.1\WMS.genruntimeconfig.cache
 E:\大二项目\WMSAPI\WMS\WMS\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
-E:\大二项目\WMSAPI\WMS\WMS\obj\Debug\netcoreapp3.1\WMS.csproj.CoreCompileInputs.cache
-E:\大二项目\WMSAPI\WMS\WMS\obj\Debug\netcoreapp3.1\WMS.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\86176\Source\Repos\WMSAPI2\WMS\WMS\obj\Debug\netcoreapp3.1\WMS.AssemblyInfoInputs.cache
 C:\Users\86176\Source\Repos\WMSAPI2\WMS\WMS\obj\Debug\netcoreapp3.1\WMS.AssemblyInfo.cs
 C:\Users\86176\Source\Repos\WMSAPI2\WMS\WMS\obj\Debug\netcoreapp3.1\WMS.csproj.CoreCompileInputs.cache
@@ -633,6 +631,14 @@ C:\Users\lenovo\Desktop\WMS项目\API\WMS\WMS\bin\Debug\netcoreapp3.1\Newtonsoft
 E:\大二项目\WMSAPI\WMS\WMS\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 E:\大二项目\WMSAPI\WMS\WMS\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 E:\大二项目\WMSAPI\WMS\WMS\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+E:\大二项目\WMSAPI\WMS\WMS\bin\Debug\netcoreapp3.1\NPOI.OOXML.dll
+E:\大二项目\WMSAPI\WMS\WMS\bin\Debug\netcoreapp3.1\NPOI.OpenXml4Net.dll
+E:\大二项目\WMSAPI\WMS\WMS\bin\Debug\netcoreapp3.1\NPOI.OpenXmlFormats.dll
+E:\大二项目\WMSAPI\WMS\WMS\bin\Debug\netcoreapp3.1\NPOI.dll
+E:\大二项目\WMSAPI\WMS\WMS\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+E:\大二项目\WMSAPI\WMS\WMS\bin\Debug\netcoreapp3.1\ICSharpCode.SharpZipLib.dll
+E:\大二项目\WMSAPI\WMS\WMS\obj\Debug\netcoreapp3.1\WMS.csproj.CoreCompileInputs.cache
+E:\大二项目\WMSAPI\WMS\WMS\obj\Debug\netcoreapp3.1\WMS.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\T\Desktop\api\WMS\WMS\obj\Debug\netcoreapp3.1\WMS.csprojAssemblyReference.cache
 C:\Users\86176\Desktop\WAS_api2\WMSAPI2\WMS\WMS\obj\Debug\netcoreapp3.1\WMS.csprojAssemblyReference.cache
 F:\项目\常少楠\WMS\WMS\obj\Debug\netcoreapp3.1\WMS.csprojAssemblyReference.cache
